@@ -7,15 +7,15 @@ weight: 50
 
 ---
 
-Hugo is a static site engine written in Go.
+一个技术宅的自留地。本人非IT专业人士，只是个人爱好钻研。
 
+这个网站只是把自己的收获记录下来备忘，也希望能帮助有缘人。
 
-It makes use of a variety of open source projects including:
+本站记录均为自己搜索实践操作，均非[自己原创]^(搜索所得)，只是自己加工整理。
 
-* [Cobra](https://github.com/spf13/cobra)
-* [Viper](https://github.com/spf13/viper)
-* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
-* [Cast](https://github.com/spf13/cast)
+如果您也此感兴趣，我建议你善用**google**，远离**某度**。其中原因您一比较即可知道。
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+如果您对前沿技术感兴趣，一定要用**英文搜索**，中文的结果往往不正确。
+另外，尽可能参照最近的文章也是一个避免犯错的好办法。
 
+最后，要经常**备份**，切记切记。这方面clonezilla不错。

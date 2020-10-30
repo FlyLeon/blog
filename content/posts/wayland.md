@@ -4,7 +4,7 @@ date: 2020-10-29T12:33:02+08:00
 categories : ["linux"]
 tags : ["arch","wayland"]
 ---
->waylnd 是linux下新的协议，可以替代xorg用于图形显示。sway是wayland上的title窗口管理器，类似于xorg下的i3，设置基本相同，方便使用快捷键来操作。以下设置主要参考[archlinux wiki](https://wiki.archlinux.org/index.php/wayland)。
+>wayland 是linux下新的协议，可以替代xorg用于图形显示。sway是wayland上的title窗口管理器，类似于xorg下的i3，设置基本相同，方便使用快捷键来操作。以下设置主要参考[archlinux wiki](https://wiki.archlinux.org/index.php/wayland)。
 
 # wayland和sway安装
 * 安装

@@ -4,8 +4,11 @@ date: 2020-10-22T10:17:33+08:00
 tags: ["archlinux"]
 categories: ["linux"]
 ---
+>archliux是一个滚动更新的linux发行版，它有庞大软件库和最新的系统，适合爱尝鲜的使用，事实上你只要经常更新，它也是比较稳定的。我曾使用过manjaro，安装确实省事。但你无法完全控制，不适用我这样追求完美注意的人，gentoo又似乎太麻烦，为了那一点性能提高，好像也划不来。所以我还是使用archlinux，定制性强又不失快速。自从使用EFI STUBqids后，从BiOS自检完，到进入登录画面只需1秒多，可以说是飞速。使用wayland加sway和xammod内核进入系统内寸占用不到300M，我非常满意。
+
 archlinux 安装需联网。broadcom 4360 网卡需手动安装驱动。
-# bcm 4360 网卡
+# bcm 4360 网卡驱动
+这是安装前首先要做的，archlinux安装盘自带bcm4360,不过缺省使用的b43quds，我们需要卸载后，加载wl驱动。
 ```
 rmmod b43 ssb
 rmmod bcma
@@ -17,6 +20,10 @@ iwctl
 station wlan0 get-networks
 station wlan0 connect  **
 ```
+{{< admonition type=tip title="技巧" open=false >}}
+如果加载wl模块后，仍无法找到无线网卡，可卸载重新加载一次
+{{< /admonition >}}
+
 # pgp密钥导入
 yay需要pgp密钥，使用代理添加。
 ```
@@ -41,7 +48,7 @@ sudo timeshift --restore --snapshot '2019-07-16_16-35-42' --skip-grub
    关闭 watchdog
 
 # 安装 xanmod 内核
-优化桌面反应。
+优化桌面反应速度，启动速度，减少内存占用。
 
 ```
 yay -S linux-xanmod linux-xanmod-header

@@ -4,7 +4,8 @@ date: 2020-10-22T10:19:52+08:00
 tags: ["archlinux"]
 categories: ["linux"]
 ---
-   archlinux 安装配置的文章网上很多，大多涉及源设置，输入法，字体美化，终端设置等等，但仍有很多细节缺失，为此将自己完善Thinkpad X1 carbon 7th 的过程简要记录备忘。
+>archlinux 安装配置的文章网上很多，大多涉及源设置，输入法，字体美化，终端设置等等，但仍有很多细节缺失，为此将自己完善Thinkpad X1 carbon 7th 的过程简要记录备忘。
+
 1. BIOS 设置
    * 禁止 "Secure Boot" Security -> Secure Boot - Set to "Disabled". 
    * 节能  禁止 Config -> Thunderbolt BIOS Assist Mode - Set to "Enabled"
