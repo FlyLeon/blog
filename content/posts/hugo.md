@@ -115,3 +115,8 @@ git submodule update
 以后使用前先`git pull`同步一下。
 {{< /admonition >}}
 
+## 配置自己域名
+* 设置域名CNAME
+在域名管理页面设置域名CNAME指向你的博客eopo。
+* 设置博客repo
+在博客仓库设置页面custom domain处填入你的域名，可勾选下面enforce HTTPS。
