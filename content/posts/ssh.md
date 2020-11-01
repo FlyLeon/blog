@@ -39,7 +39,7 @@ The key's randomart image is:
 ``` 
 * 使用ssh-copy-id上传公钥
 ```
-ssh-copy-id -i ~/.ssh/id_rsa.pub User@HostName -p Port
+ssh-copy-id -i ~/.ssh/id_rsa.pub -p Port User@HostName 
 ```
 {{< admonition >}}
 ssh-copy-id 命令相当于执行了以下复杂的手动操作：
