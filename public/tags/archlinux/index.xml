@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>archlinux - 标签 - 我的自留地</title>
+        <link>https://flyleon.github.io/tags/archlinux/</link>
+        <description>archlinux - 标签 - 我的自留地</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 22 Oct 2020 10:19:52 &#43;0800</lastBuildDate><atom:link href="https://flyleon.github.io/tags/archlinux/" rel="self" type="application/rss+xml" /><item>
+    <title>Archlinux 优化之二</title>
+    <link>https://flyleon.github.io/arch-2/</link>
+    <pubDate>Thu, 22 Oct 2020 10:19:52 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/arch-2/</guid>
+    <description><![CDATA[archlinux 安装配置的文章网上很多，大多涉及源设置，输入法，字体美化，终端设置等等，但仍有很多细节缺失，为此将自己完善Thinkpad X1 carbon 7th 的过程简要]]></description>
+</item><item>
+    <title>Archlinux 优化之一</title>
+    <link>https://flyleon.github.io/arch-1/</link>
+    <pubDate>Thu, 22 Oct 2020 10:17:33 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/arch-1/</guid>
+    <description><![CDATA[archliux是一个滚动更新的linux发行版，它有庞大软件库和最新的系统，适合爱尝鲜的使用，事实上你只要经常更新，它也是比较稳定的。我曾]]></description>
+</item></channel>
+</rss>

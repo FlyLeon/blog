@@ -1,0 +1,77 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有文章 - 我的自留地</title>
+        <link>https://flyleon.github.io/posts/</link>
+        <description>所有文章 | 我的自留地</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 01 Nov 2020 14:49:57 &#43;0800</lastBuildDate><atom:link href="https://flyleon.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>我使用的主要软件</title>
+    <link>https://flyleon.github.io/soft/</link>
+    <pubDate>Sun, 01 Nov 2020 14:49:57 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/soft/</guid>
+    <description><![CDATA[安装完系统后，你还需要选择基本的软件来方便使用。好在linux下软件众多，得益于开放性和自由免费的理念，你有众多选择，总可以选择适合你的。下]]></description>
+</item><item>
+    <title>HP Gen8之基础配置</title>
+    <link>https://flyleon.github.io/gen8-1/</link>
+    <pubDate>Sun, 01 Nov 2020 10:30:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/gen8-1/</guid>
+    <description><![CDATA[HP gen8时微型4盘位的服务器，比较适合做NAS。自己也海淘了一台，升级了CPU和内存，安装了Proxmox虚拟机，虚拟机内安装了windo]]></description>
+</item><item>
+    <title>HP gen8安装配置Proxmox</title>
+    <link>https://flyleon.github.io/proxmox/</link>
+    <pubDate>Thu, 29 Oct 2020 12:37:12 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/proxmox/</guid>
+    <description><![CDATA[proxmoxi 是一款较新的免费虚拟机软件，基于debian使用qemu，lxc管理虚拟机。提供专门的管理页面，来建立管理虚拟机，支持集群，功能强大。我只]]></description>
+</item><item>
+    <title>Archlinux使用Wayland和sway</title>
+    <link>https://flyleon.github.io/wayland/</link>
+    <pubDate>Thu, 29 Oct 2020 12:33:02 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/wayland/</guid>
+    <description><![CDATA[根据维基百科，Wayland是一个通信协议，规定了显示服务器与其客户机之间的通信方式，而使用这个协议的显示服务器称为Wayland Compo]]></description>
+</item><item>
+    <title>VPS配置之六hugo</title>
+    <link>https://flyleon.github.io/hugo/</link>
+    <pubDate>Thu, 29 Oct 2020 08:33:02 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/hugo/</guid>
+    <description><![CDATA[hugo是快速的静态博客系统，可部署于github。我选择的是LoveIt主题,当然even也是很好的主题，但更适合文字博客，偏技术类博客l]]></description>
+</item><item>
+    <title>VPS配置之五SSH</title>
+    <link>https://flyleon.github.io/ssh/</link>
+    <pubDate>Tue, 27 Oct 2020 18:01:04 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/ssh/</guid>
+    <description><![CDATA[为便于VPS管理设置，我们需要开启SSH，安全起见，SSH需要在/etc/ssh/sshd_config中进行以下设置。 在服务器端设置 禁止r]]></description>
+</item><item>
+    <title>VPS配置之二Nginx</title>
+    <link>https://flyleon.github.io/nginx/</link>
+    <pubDate>Tue, 27 Oct 2020 17:10:45 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/nginx/</guid>
+    <description><![CDATA[nginx是常用服务器软件之一，高效，快速。我们的VPS需要它来建立网站、通过反向代理使用各种服务。从稳定性考虑，我的VPS使用Centos]]></description>
+</item><item>
+    <title>VPS配置之一acme证书申请</title>
+    <link>https://flyleon.github.io/acme/</link>
+    <pubDate>Sun, 25 Oct 2020 21:22:39 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/acme/</guid>
+    <description><![CDATA[Acme.sh能做什么？ acme.sh 实现了 acme 协议, 可以从 let‘s encrypt（数字证书认证机构）生成免费的证书。并且可以自动化完成创建证书、安装证]]></description>
+</item><item>
+    <title>Archlinux 优化之二</title>
+    <link>https://flyleon.github.io/arch-2/</link>
+    <pubDate>Thu, 22 Oct 2020 10:19:52 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/arch-2/</guid>
+    <description><![CDATA[archlinux 安装配置的文章网上很多，大多涉及源设置，输入法，字体美化，终端设置等等，但仍有很多细节缺失，为此将自己完善Thinkpad X1 carbon 7th 的过程简要]]></description>
+</item><item>
+    <title>Archlinux 优化之一</title>
+    <link>https://flyleon.github.io/arch-1/</link>
+    <pubDate>Thu, 22 Oct 2020 10:17:33 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/arch-1/</guid>
+    <description><![CDATA[archliux是一个滚动更新的linux发行版，它有庞大软件库和最新的系统，适合爱尝鲜的使用，事实上你只要经常更新，它也是比较稳定的。我曾]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>acme - 标签 - 我的自留地</title>
+        <link>https://flyleon.github.io/tags/acme/</link>
+        <description>acme - 标签 - 我的自留地</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 25 Oct 2020 21:22:39 &#43;0800</lastBuildDate><atom:link href="https://flyleon.github.io/tags/acme/" rel="self" type="application/rss+xml" /><item>
+    <title>VPS配置之一acme证书申请</title>
+    <link>https://flyleon.github.io/acme/</link>
+    <pubDate>Sun, 25 Oct 2020 21:22:39 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/acme/</guid>
+    <description><![CDATA[Acme.sh能做什么？ acme.sh 实现了 acme 协议, 可以从 let‘s encrypt（数字证书认证机构）生成免费的证书。并且可以自动化完成创建证书、安装证]]></description>
+</item></channel>
+</rss>

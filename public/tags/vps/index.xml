@@ -1,0 +1,42 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>vps - 标签 - 我的自留地</title>
+        <link>https://flyleon.github.io/tags/vps/</link>
+        <description>vps - 标签 - 我的自留地</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 01 Nov 2020 10:30:22 &#43;0800</lastBuildDate><atom:link href="https://flyleon.github.io/tags/vps/" rel="self" type="application/rss+xml" /><item>
+    <title>HP Gen8之基础配置</title>
+    <link>https://flyleon.github.io/gen8-1/</link>
+    <pubDate>Sun, 01 Nov 2020 10:30:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/gen8-1/</guid>
+    <description><![CDATA[HP gen8时微型4盘位的服务器，比较适合做NAS。自己也海淘了一台，升级了CPU和内存，安装了Proxmox虚拟机，虚拟机内安装了windo]]></description>
+</item><item>
+    <title>VPS配置之六hugo</title>
+    <link>https://flyleon.github.io/hugo/</link>
+    <pubDate>Thu, 29 Oct 2020 08:33:02 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/hugo/</guid>
+    <description><![CDATA[hugo是快速的静态博客系统，可部署于github。我选择的是LoveIt主题,当然even也是很好的主题，但更适合文字博客，偏技术类博客l]]></description>
+</item><item>
+    <title>VPS配置之五SSH</title>
+    <link>https://flyleon.github.io/ssh/</link>
+    <pubDate>Tue, 27 Oct 2020 18:01:04 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/ssh/</guid>
+    <description><![CDATA[为便于VPS管理设置，我们需要开启SSH，安全起见，SSH需要在/etc/ssh/sshd_config中进行以下设置。 在服务器端设置 禁止r]]></description>
+</item><item>
+    <title>VPS配置之二Nginx</title>
+    <link>https://flyleon.github.io/nginx/</link>
+    <pubDate>Tue, 27 Oct 2020 17:10:45 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/nginx/</guid>
+    <description><![CDATA[nginx是常用服务器软件之一，高效，快速。我们的VPS需要它来建立网站、通过反向代理使用各种服务。从稳定性考虑，我的VPS使用Centos]]></description>
+</item><item>
+    <title>VPS配置之一acme证书申请</title>
+    <link>https://flyleon.github.io/acme/</link>
+    <pubDate>Sun, 25 Oct 2020 21:22:39 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://flyleon.github.io/acme/</guid>
+    <description><![CDATA[Acme.sh能做什么？ acme.sh 实现了 acme 协议, 可以从 let‘s encrypt（数字证书认证机构）生成免费的证书。并且可以自动化完成创建证书、安装证]]></description>
+</item></channel>
+</rss>
