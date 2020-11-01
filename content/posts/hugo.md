@@ -4,7 +4,7 @@ date: 2020-10-29T08:33:02+08:00
 categories : ["linux"]
 tags : ["vps"]
 ---
->hugo是快速的静态博客系统，可部署于github。我选择的是LoveIt主题,当然even也是很好的主题，但更适合文字博客，偏技术类博客loveit更现代，更适合。而且loveit功能很全，评论，搜索简单设置开箱即用，比较方便。但设置文档仍比较缺乏。
+>hugo是快速的静态博客系统，可部署于github。我选择的是LoveIt主题,当然even也是很好的主题，但更适合文字博客，偏技术类博客loveit更现代，更适合。而且loveit功能很全，评论，搜索简单设置开箱即用，比较方便，而且设置文档也比较丰富。
 
 ## 安装hugo
 archlinux下安装hugo非常简单，只需一条命令，一个文件。
@@ -103,3 +103,15 @@ defaultContentLanguage = "zh-cn"
 logo = "/images/kiss-wink-heart-regular.svg
 ```
  此svg可从awesome font网站下载放入images目录。
+
+## 其他机器使用
+```
+git clone <文章管理repo> blog
+cd blog
+git submodule init
+git submodule update
+```
+{{< admonition >}}
+以后使用前先`git pull`同步一下。
+{{< /admonition >}}
+
