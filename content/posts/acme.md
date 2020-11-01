@@ -6,7 +6,7 @@ categories: ["linux"]
 ---
 
 >Acme.sh能做什么？
-acme.sh 实现了 acme 协议, 可以从 let‘s encrypt（数字证书认证机构）生成免费的证书。并且可以自动化完成创建证书、安装证书、更新证书的流程。
+acme.sh可以从 let‘s encrypt（数字证书认证机构）生成免费的证书。并且可以自动化完成创建证书、安装证书、更新证书的流程。
 
 # 一、安装acme.sh
 ```
