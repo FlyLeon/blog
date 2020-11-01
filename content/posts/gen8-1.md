@@ -3,7 +3,6 @@ title: "HP Gen8之基础配置"
 date: 2020-11-01T10:30:22+08:00
 categories : ["linux"]
 tags : ["vps","gen8"]
-draft: true
 ---
 >HP gen8时微型4盘位的服务器，比较适合做NAS。自己也海淘了一台，升级了CPU和内存，安装了Proxmox虚拟机，虚拟机内安装了windows server 2019,synology,centos 7,还是很稳定的。
 
