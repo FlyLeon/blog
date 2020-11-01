@@ -31,6 +31,10 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 hugo new posts/<文章名>.md
 hugo
 ```
+* 本地测试
+```
+hugo serve --buildDrafts
+```
 ## 使用gihub管理blog和文章
 
 我们需要建立两个repo，分别用于文章管理和博客发布。其中博客发布我使用的是建立<用户名>.github.io，相对比较简单。
