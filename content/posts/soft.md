@@ -22,6 +22,7 @@ chsh /usr/bin/fish
 {{< /admonition >}}
 ## 文本编辑 
 使用neovim，功能多，更新快。 插件使用vim-plug管理。
+
 .config/vim/init.vim
 ```
 call plug#begin('~/.local/share/nvim/plugged')
@@ -89,6 +90,7 @@ neovim颜色可按照vim配置说明操作即可。
 {{< /admonition >}}
 ## 私有网盘
 filebrowser是一款简单、方便的网盘软件，只需一个文件。
+
 /etc/filebrowser/filebrowser.json
 ```
   "port": 7000,
