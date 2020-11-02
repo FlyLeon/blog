@@ -44,11 +44,11 @@ ipmitool lan set 2 defgw ipaddr 192.168.50.1
 ipmitool mc reset cold
 ```
 ## 升级BIOS
-HP gen8的很多设着都可以在ilo下操作，升级BIOS也可以在ilo固件下进行，直接上传BIOS镜像即可，我使用的是2019年4月4日的。当然也可以通过usb-keydisk制作usb来升级，不过没有ilo方便。另外gen8为了安全期间，有两个BIOS，一个备份，一个使用，正常升级只升级备份，没有问题的话，需要我们在BIOS手动交换来永久使用。
+HP gen8的很多设着都可以在ilo下操作，升级BIOS也可以在ilo固件下进行，直接上传BIOS镜像即可，我使用的是2019年4月4日的。当然也可以制作usb来升级，不过没有ilo方便。另外gen8为了安全期间，有两个BIOS，一个备份，一个使用，正常升级只升级备份，没有问题的话，需要我们在BIOS手动交换来永久使用。
 具体操作可上网搜索。
 
 ## 使用SPP升级系统
-HP gen8可定期通过SPP升级系统，不过HP网站过质保期后就无法下载，这里我们可以搜索热心网友分享的下载。
+HP gen8可定期通过SPP升级系统，不过HP网站过质保期后就无法下载，我们可以搜索热心网友分享的下载。
 
 {{< admonition tip  >}}
 最新SPP下载地址：{{< link "https://technet24.ir/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF-%D8%B3%D8%B1%D9%88%DB%8C%D8%B3-%D9%BE%DA%A9-hpe-service-pack-for-proliant-9872" >}}

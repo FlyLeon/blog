@@ -4,7 +4,7 @@ date: 2020-10-29T12:33:02+08:00
 categories : ["linux"]
 tags : ["arch","wayland"]
 ---
->根据维基百科，Wayland是一个通信协议，规定了显示服务器与其客户机之间的通信方式，而使用这个协议的显示服务器称为Wayland Compositor。是不是很不好理解，我们只需知道它可以代替xorg就可以了。sway是wayland上的Title Compositor，类似于xorg下的i3，设置基本相同，方便使用快捷键来操作。以下设置主要参考[archlinux wiki](https://wiki.archlinux.org/index.php/wayland)。
+>根据维基百科，Wayland是一个通信协议，规定了显示服务器与其客户机之间的通信方式，而使用这个协议的显示服务器称为Wayland Compositor。是不是很不好理解，我们只需知道它可以代替xorg就可以了。sway是wayland上的Title Compositor，类似于xorg下的i3，设置基本相同，使用快捷键来操作。以下设置主要参考[archlinux wiki](https://wiki.archlinux.org/index.php/wayland)。
 
 # wayland和sway安装
 * 安装
