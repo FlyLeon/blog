@@ -1,10 +1,10 @@
 ---
-title: "HP Gen8之基础配置"
+title: "HP Gen8设置"
 date: 2020-11-01T10:30:22+08:00
 categories : ["linux"]
 tags : ["vps","gen8"]
 ---
->HP gen8时微型4盘位的服务器，比较适合做NAS。自己也海淘了一台，升级了CPU和内存，安装了Proxmox虚拟机，虚拟机内安装了windows server 2019,synology,centos 7,还是很稳定的。
+>HP gen8时微型4盘位的服务器，比较适合做NAS。自己也海淘了一台，升级了CPU(1265v2)和内存(16M)，安装了Proxmox虚拟机，虚拟机内安装了windows server 2019,synology,centos 7,还是很稳定的。
 
 ## ilo静态ip地址设置
 ilo是gen8的特色，方便服务器远程管理，无需连接显示器核键盘。使用自动获取ip，每次连接很不方便，可以为设置静态地址方便连接。目前我安装的ilo版本是2.75，支持使用html5远程控制管理，比较方便。
@@ -56,3 +56,16 @@ HP gen8可定期通过SPP升级系统，不过HP网站过质保期后就无法�
 * 远程在ilo界面左上角选择CDROM图标挂载SPPiso镜像
 * 重新启动按F1选择CD-ROM启动。
 * 选择第一项自动安装，否则升级可能会出现问题。
+
+## proxmox
+proxmox 是一款免费虚拟机软件，基于debian，使用qemu，lxc虚拟化。提供专门的管理页面（端口8006）来建立管理虚拟机，支持集群，功能强大，我仅使用了它最基础的功能。
+{{< admonition tip >}}
+安装很简单，使用ilo远程服务台挂载安装ISO，选择CDROM启动即可。proxmox占用空间很小，可直接安装到gen8内置的SD或USB盘上，可以省去一个硬盘接口。
+选择网卡时，一定要选择好，否则启动后无法连接控制台，解决也很简单，交换网线口即可。
+{{< /admonition >}}
+
+## synology
+群辉是比较常用的NAS它的软件是基于linux开发，功能强大，使用模块化管理，拓展性强，稳定性高。我安装了一个它的破解后的虚拟机，主要用作NAS和照片管理。
+最新资源在[xpenology](https://xpenology.com/forum/)上可以找到。
+##  软路由
+常见的pc软路由软件有openwart，ros，voxy，其中lede是基于openwrt整合了较多功能，我们一般使用lead即可。ros是收费商业软件，稳定性和性能据说不错，不过无法拓展功能。voxy也是开源软件，但也无法拓展。lede编译比较复杂，依赖很多，我们可以使用现成的[docker](https://github.com/jandelgado/lede-dockerbuilder)来编译，方便很多。
