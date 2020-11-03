@@ -67,6 +67,6 @@ chmod 600 ~/.ssh/authorized_keys
 {{< /admonition >}}
 * 使用ssh-key登录
 ```
-ssh User@HostName -p Port
+ssh -p Port User@HostName
 ```
 

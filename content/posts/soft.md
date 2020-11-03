@@ -22,6 +22,7 @@ chsh /usr/bin/fish
 {{< /admonition >}}
 ## 文本编辑 
 使用neovim，功能多，更新快。 插件使用vim-plug管理。
+
 .config/vim/init.vim
 ```
 call plug#begin('~/.local/share/nvim/plugged')
@@ -89,6 +90,10 @@ neovim颜色可按照vim配置说明操作即可。
 {{< /admonition >}}
 ## 私有网盘
 filebrowser是一款简单、方便的网盘软件，只需一个文件。
+<<<<<<< HEAD
+=======
+
+>>>>>>> b18ea3f0ef63f2c36b2809fa17d94d754911f2aa
 /etc/filebrowser/filebrowser.json
 ```
   "port": 7000,
@@ -128,7 +133,7 @@ WantedBy=multi-user.target
 
 /etc/systemd/system/frps.service
 ```
-Unit]
+[Unit]
 Description=Frp Server Service
 After=network.target
 
@@ -144,6 +149,7 @@ WantedBy=multi-user.target
 ```
 /etc/frps/frps.ini
 ```
+<<<<<<< HEAD
 [Unit]
 Description=The filebrowser Process Manager
 After=network.target
@@ -159,6 +165,8 @@ WantedBy=multi-user.target
 
 ~                                                                                     
 [Unit]
+=======
+>>>>>>> b18ea3f0ef63f2c36b2809fa17d94d754911f2aa
 # [common] is integral section
 [common]
 # A literal address or host name for IPv6 must be enclosed

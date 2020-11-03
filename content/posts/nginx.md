@@ -86,5 +86,41 @@ location / {
 ```
 * frps反向代理
 ```
+server {
+    listen 80;
+    server_name *.yourdomain.com;
+    return 301 https://$host$request_uri;
+}
 
+server {
+    listen 443 ssl http2;
+    server_name *.yourdomain.com;
+
+    ssl_certificate /usr/local/nginx/conf/ssl/yourdomain.com.crt;
+    ssl_certificate_key /usr/local/nginx/conf/ssl/yourdomain.com.key;
+
+    client_max_body_size 50m; 
+    client_body_buffer_size 256k;
+    client_header_timeout 3m;
+    client_body_timeout 3m;
+    send_timeout 3m;
+    proxy_connect_timeout 300s; 
+    proxy_read_timeout 300s; 
+    proxy_send_timeout 300s;
+    proxy_buffer_size 64k; 
+    proxy_buffers 4 32k; 
+    proxy_busy_buffers_size 64k;
+    proxy_temp_file_write_size 64k; 
+    proxy_ignore_client_abort on; 
+
+    location / {
+        proxy_pass http://127.0.0.1:1234; //frps vhost port
+        proxy_redirect off;
+        proxy_set_header Host $host:80;
+        proxy_ssl_server_name on;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
 ```
