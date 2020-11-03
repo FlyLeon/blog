@@ -12,7 +12,7 @@ categories: ["linux"]
    * 休眠模式 Config -> Power -> Sleep State
      引用自archlinux wiki
 ## 安装网卡驱动 
-   broadcom-wl-dkms，每次升级内核后，都要重新安装。
+   broadcom-wl-dkms，每次升级内核后，都自动安装。
 ## 音质提升
    * ~/.config/pulse/daemon.conf
 ```
