@@ -82,7 +82,7 @@ set background=dark
 highlight Normal guibg=NONE ctermbg=None
 ```
 ## **软件
-v2raya是一款使用网页方便设置的**软件，支持全局代理，支持常用**协议。
+v2raya是一款使用网页方便设置的\**软件，支持全局代理，支持常用\**协议。
 ## 配色
 可以为fish，kitty，neovim均安装使用流行的dracula配色，这方面搜索dracula网站即可，说明很详细。
 {{< admonition tip >}}
@@ -90,10 +90,7 @@ neovim颜色可按照vim配置说明操作即可。
 {{< /admonition >}}
 ## 私有网盘
 filebrowser是一款简单、方便的网盘软件，只需一个文件。
-<<<<<<< HEAD
-=======
 
->>>>>>> b18ea3f0ef63f2c36b2809fa17d94d754911f2aa
 /etc/filebrowser/filebrowser.json
 ```
   "port": 7000,
@@ -149,24 +146,6 @@ WantedBy=multi-user.target
 ```
 /etc/frps/frps.ini
 ```
-<<<<<<< HEAD
-[Unit]
-Description=The filebrowser Process Manager
-After=network.target
-
-[Service]
-Type=simple
-ExecStart=/usr/local/bin/filebrowser -c /etc/filebrowser/filebrowser.json
-ExecStop=/bin/killall filebrowser
-PrivateTmp=true
-
-[Install]
-WantedBy=multi-user.target
-
-~                                                                                     
-[Unit]
-=======
->>>>>>> b18ea3f0ef63f2c36b2809fa17d94d754911f2aa
 # [common] is integral section
 [common]
 # A literal address or host name for IPv6 must be enclosed
