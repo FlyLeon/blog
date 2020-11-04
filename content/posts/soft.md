@@ -10,7 +10,7 @@ clonezilla是一款linux下优秀的备份软件，基于debian构建，类似gh
 ## USB启动工具
 ventoy是EFI启动模式下制作USB启动盘的工具，与以往不同，它不需要复杂操作，安装后会在USB上建立两个分区，一个用于启动，一个用于放置ISO文件。只需将ISO文件放入特定分区，ventoy会自动识别，加入启动选择。
 ## 终端
-我使用的是termite,设置简单，也不用安装很多依赖，支持24位真彩色。在wayland下也可以使用fcitx，alacritty和kitty不支持。网上说alacritty可以，但我怎么设置都不行，只好放弃。
+我使用的是termite,设置简单，也不用安装很多依赖，支持24位真彩色。在wayland下也可以使用fcitx，alacritty和kitty均无法使用。网上说alacritty可以，但我怎么设置都不行，只好放弃。
 termite的设置文件是`.config/termite/config`
 ```
 [options]
@@ -21,7 +21,7 @@ termite的设置文件是`.config/termite/config`
 #cell_width_scale = 1.0
 #clickable_url = true
 #dynamic_title = true
-font =  JetBrainsMono Nerd Font Mono 12
+font =  JetBrains Mono NL 12
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false

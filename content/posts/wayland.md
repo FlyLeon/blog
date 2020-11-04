@@ -158,4 +158,14 @@ input <identifier> xkb_model "x1carbon"
 ```
 for_window [instance=google-chrome] inhibit_idle fullscreen
 ```
+*  正确显示fcitx键盘图标
+查看图标：
+```
+find /usr/share/icons/ -name 'input-keyboard.*'
+```
+bar设置主题：
+```
+icon_theme Adwaita
+
+```
 
