@@ -4,15 +4,14 @@ date: 2020-11-01T14:49:57+08:00
 categories : ["linux"]
 tags : ["software"]
 ---
->安装完系统后，你还需要选择基本的软件来方便使用。好在linux下软件众多，得益于开放性和自由免费的理念，你有众多选择，总可以选择适合你的。下面便是我目前使用的软件：
+>安装完系统后，你还需要安装基本的软件来方便使用。好在linux下软件众多，得益于开放性和自由免费的理念，你有众多选择，总可以选择适合你的。下面便是我目前使用的软件：
 ## 备份软件
 clonezilla是一款linux下优秀的备份软件，基于debian构建，类似ghost,但比ghost更灵活。自身可以启动，支持多种模式备份，即可以整盘备份，也可以按分区备份。可通过ventoy制作启动USB，放入ISO即可。
 ## USB启动工具
 ventoy是EFI启动模式下制作USB启动盘的工具，与以往不同，它不需要复杂操作，安装后会在USB上建立两个分区，一个用于启动，一个用于放置ISO文件。只需将ISO文件放入特定分区，ventoy会自动识别，加入启动选择。
 ## 终端
-我使用的是termite,设置简单，也不用安装很多依赖，支持24位真彩色。在wayland下也可以使用fcitx，alacritty和kitty不支持。网上说alacritty可以，但我怎么设置都不行，只好放弃。
-
-termite的设置文件是`.config/termite/config`。安装后可从`/etc/xdg/termite/config`复制。
+我使用的是termite,设置简单，也不用安装很多依赖，支持24位真彩色。在wayland下也可以使用fcitx，alacritty和kitty均无法使用。网上说alacritty可以，但我怎么设置都不行，只好放弃。
+termite的设置文件是`.config/termite/config`
 ```
 [options]
 #allow_bold = true
@@ -22,7 +21,7 @@ termite的设置文件是`.config/termite/config`。安装后可从`/etc/xdg/ter
 #cell_width_scale = 1.0
 #clickable_url = true
 #dynamic_title = true
-font =  JetBrainsMono Nerd Font Mono 12
+font =  JetBrains Mono NL 12
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false

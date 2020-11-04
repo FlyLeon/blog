@@ -66,4 +66,17 @@ grub-mkconfig -o /boot/grub/grub.cfg
 sudo efibootmgr --disk /dev/nvme0n1 --part 1 --create --label "Arch" --loader /vmlinuz-linux-xanmod --unicode 'root=UUID=0f949b62-98bf-4787-b8b9-1f21d0889691  rw initrd=\initramfs-linux-xanmod.img loglevel=3 quiet nowatchdog'
 
 ```
-
+# 清理
+* 清理孤立包
+```
+sudo pacman -Rns $(pacman -Qtdq)
+```
+* 清理日志
+```
+journalctl --vacum-size=50M
+```
+* 清理缓冲
+```
+sudo pacman -Scc
+```
+```
