@@ -1,5 +1,5 @@
 ---
-title: "Archlinux使用Wayland和sway"
+title: "使用Wayland和sway"
 date: 2020-10-29T12:33:02+08:00
 categories : ["linux"]
 tags : ["arch","wayland"]
@@ -166,6 +166,17 @@ find /usr/share/icons/ -name 'input-keyboard.*'
 bar设置主题：
 ```
 icon_theme Adwaita
-
 ```
 
+# 登录管理器
+登录管理器我选择greetd+tuigreet，非常小巧灵活的终端登陆器。
+* 安装
+```
+yay - S greetd greetd-tuigreet
+```
+* 设置
+/etc/greetd/config.timl
+```
+[default_session]
+command = "tuigreet --cmd sway"
+```

@@ -222,8 +222,6 @@ set termguicolors
 set background=dark
 highlight Normal guibg=NONE ctermbg=None
 ```
-## **软件
-v2raya是一款使用网页方便设置的\**软件，支持全局代理，支持常用\**协议。
 ## 配色
 可以为fish，kitty，neovim均安装使用流行的dracula配色，这方面搜索dracula网站即可，说明很详细。
 {{< admonition tip >}}
@@ -408,3 +406,9 @@ GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 MODIFIERS="@im=fcitx"
 ```
+{{< admonition tip >}}
+更换Adwaita/缺省难看的键盘图标，可以安装其他主题替换/usr/share/icons/Adwaita/32x32/legacy/input-keyboard.png文件。
+{{< /admonition >}}
+# 文件管理器 
+ranger是一个终端文件管理器，使用键盘操作。只是在wayland下图片预览功能无法使用。我们可以使用小巧的imv终端图像浏览软件代替。
+
