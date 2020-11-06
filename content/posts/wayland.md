@@ -27,7 +27,7 @@ GDK_DPI_SCALE=1.65                   //hidpi 设置
 # sway 设置
 * 终端设置
 ```
-set $term  kitty
+set $term urxvtc 
 ```
 * bemenu 设置
 wayland使用bemenu快速启动程序
@@ -36,7 +36,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec bemenu -b
 ```
 * 护眼程序redshift
 ```
-exec "kitty -e nohup redshift 2>&1
+exec "urxvtc -e nohup redshift 2>&1
 ```
 * 输出背景和分辨率
 ```
@@ -81,11 +81,9 @@ client.urgent     $ubgcolor  $ubgcolor  $textcolor $ubgcolor
      font xft:Font Awesome 5 16 
      # When the status_command prints a new line to stdout, swaybar updates.
      # The default just shows the current date and time.
- #    status_command waybar  -c ~/.config/waybar/config
- #     status_command while ~/.config/sway/sway_bar.sh; do sleep 1; done
  #      status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
  
-      status_command i3status -c ~/.config/i3status/i3status.conf
+      status_command i3status 
       colors {
                   background $barcolor
                   separator $barcolor  
@@ -118,7 +116,6 @@ smart_gaps on
 ```
 bindsym $mod+x exec google-chrome-stable
 for_window [instance=google-chrome]  move container to workspace number 2
-for_window  [instance=google-chrome] 
 ```
 * 设置关机锁屏等快捷键
 ```
@@ -139,12 +136,12 @@ mode "$mode_system" {
 }
  bindsym $mod+Shift+q mode "$mode_system"a
  ```
-* 设置边框大小
+* 设置边框取消标题栏
  ```
  default_border pixel 1
  ```
 * 设置键盘
-参照[github](https://github.com/pfaion/x1carbon-xkb-geometry)设置
+参照[github](https://github.com/pfaion/x1carbon-xkb-geometry)设置thinkpad X1键盘。
  ```
    input * {
      xkb_layout "us"
@@ -154,7 +151,7 @@ mode "$mode_system" {
  
 input <identifier> xkb_model "x1carbon"
 ```
-* 全屏取消锁屏
+* chrome全屏取消锁屏
 ```
 for_window [instance=google-chrome] inhibit_idle fullscreen
 ```
