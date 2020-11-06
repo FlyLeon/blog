@@ -340,5 +340,4 @@ MODIFIERS="@im=fcitx"
 更换Adwaita/缺省难看的键盘图标，可以安装其他主题替换/usr/share/icons/Adwaita/32x32/legacy/input-keyboard.png文件。
 {{< /admonition >}}
 # 文件管理器 
-ranger是一个终端文件管理器，使用键盘操作。只是在wayland下图片预览功能无法使用。我们可以使用小巧的imv终端图像浏览软件代替。
-
+ranger是一个终端文件管理器，使用键盘操作，在wayland下需安装w3m使用图片预览功能。
