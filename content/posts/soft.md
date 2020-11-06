@@ -10,148 +10,78 @@ clonezilla是一款linux下优秀的备份软件，基于debian构建，类似gh
 ## USB启动工具
 ventoy是EFI启动模式下制作USB启动盘的工具，与以往不同，它不需要复杂操作，安装后会在USB上建立两个分区，一个用于启动，一个用于放置ISO文件。只需将ISO文件放入特定分区，ventoy会自动识别，加入启动选择。
 ## 终端
-我使用的是termite,设置简单，也不用安装很多依赖，支持24位真彩色。在wayland下也可以使用fcitx，alacritty和kitty均无法使用。网上说alacritty可以，但我怎么设置都不行，只好放弃。
-termite的设置文件是`.config/termite/config`
+我使用的是urxvt，termite不能在ranger中预览图像。urxvt设置较为繁琐，在wayland下可以使用fcitx，alacritty和kitty均无法使用。网上说alacritty可以，但我怎么设置都不行，只好放弃。
+{{< admonition tip>}}
+* 一定要安装aur中的`urxvt-unicode-truecolor`来支持中文和真彩色。
+* 在wayland中，urxvt可通过.Xdefaults设置，以下设置均在其中。
+{{</admonition >}}
+* fcitx支持
 ```
-[options]
-#allow_bold = true
-#audible_bell = false
-#bold_is_bright = true
-#cell_height_scale = 1.0
-#cell_width_scale = 1.0
-#clickable_url = true
-#dynamic_title = true
-font =  JetBrains Mono NL 12
-#fullscreen = true
-#icon_name = terminal
-#mouse_autohide = false
-#scroll_on_output = false
-#scroll_on_keystroke = true
-# Length of the scrollback buffer, 0 disabled the scrollback buffer
-# and setting it to a negative value means "infinite scrollback"
-scrollback_lines = 10000
-#search_wrap = true
-#urgent_on_bell = true
-#hyperlinks = false
-
-# $BROWSER is used by default if set, with xdg-open as a fallback
-browser = xdg-open
-
-# "system", "on" or "off"
-#cursor_blink = system
-
-# "block", "underline" or "ibeam"
-#cursor_shape = block
-
-# Hide links that are no longer [options]
-#allow_bold = true
-#audible_bell = false
-#bold_is_bright = true
-#cell_height_scale = 1.0
-#cell_width_scale = 1.0
-#clickable_url = true
-#dynamic_title = true
-font =  JetBrainsMono Nerd Font Mono 12
-#fullscreen = true
-#icon_name = terminal
-#mouse_autohide = false
-#scroll_on_output = false
-#scroll_on_keystroke = true
-# Length of the scrollback buffer, 0 disabled the scrollback buffer
-# and setting it to a negative value means "infinite scrollback"
-scrollback_lines = 10000
-#search_wrap = true
-#urgent_on_bell = true
-#hyperlinks = false
-
-# $BROWSER is used by default if set, with xdg-open as a fallback
-browser = xdg-open
-
-# "system", "on" or "off"
-#cursor_blink = system
-
-# "block", "underline" or "ibeam"
-#cursor_shape = block
-
-# Hide links that are no longerhighlight = #2f2f2f
-
-# Colors from color0 to color254 can be set
-color0 = #3f3f3f
-color1 = #705050
-color2 = #60b48a
-color3 = #dfaf8f
-color4 = #506070
-color5 = #dc8cc3
-color6 = #8cd0d3
-color7 = #dcdccc
-color8 = #709080
-color9 = #dca3a3
-color10 = #c3bf9f
-color11 = #f0dfaf
-color12 = #94bff3
-color13 = #ec93d3
-color14 = #93e0e3
-color15 = #ffffff
-
-[hints]
-#font = Monospace 12
-#foreground = #dcdccc
-#background = #3f3f3f
-#background = #3f3f3f
-#active_foreground = #e68080
-#active_background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
-
-# vim: ft=dosini cms=#%s
-# Dracula theme for termite
-# https://github.com/dracula/termite
-# Copyright 2013-present, All rights reserved
-# Code licensed under the MIT license
-
-[colors]   # dracula 配色
-
-# special
-foreground      = #f8f8f2
-foreground_bold = #f8f8f2
-cursor          = #f8f8f2
-background      = rgba(40, 42, 54,0.8) #最后一位是透明度
-
-# black
-color0  = #000000
-color8  = #4d4d4d
-
-# red
-color1  = #ff5555
-color9  = #ff6e67
-
-# green
-color2  = #50fa7b
-color10 = #5af78e
-
-# yellow
-color3  = #f1fa8c
-color11 = #f4f99d
-
-# blue
-color4  = #bd93f9
-color12 = #caa9fa
-
-# magenta
-color5  = #ff79c6
-color13 = #ff92d0
-
-# cyan
-color6  = #8be9fd
-color14 = #9aedfe
-
-# white
-color7  = #bfbfbf
-color15 = #e6e6e6 
+URxvt.preeditType:Root
+URxvt.inputMethod:fcitx
 ```
- 
+* 使用守护进程模式
+urxvt可采用守护模式使用，使用urxvtc启动终端，节省内存，更加快速。这里采用systemd方式启动urxvtd守护进程。
+
+  + 新增`sudo /etc/systemd/system/urxvtd@.service`服务
+  + 启动服务
+```
+[Unit]
+Description=RXVT-Unicode Daemon
+
+[Service]
+User=%i
+ExecStart=/usr/bin/urxvtd -q -o
+
+[Install]
+WantedBy=multi-user.target
+```
+```
+systemctl start urxvtd@username.service
+systemctl enable urxvtd@username.service
+```
+
+* Dracula 配色
+```
+! Dracula Xresources palette
+*.foreground: #F8F8F2
+*.background: #282A36
+*.color0:     #000000
+*.color8:     #4D4D4D
+*.color1:     #FF5555
+*.color9:     #FF6E67
+*.color10:    #5AF78E
+*.color3:     #F1FA8C
+*.color11:    #F4F99D
+*.color4:     #BD93F9
+*.color12:    #CAA9FA
+*.color5:     #FF79C6
+*.color13:    #FF92D0
+*.color6:     #8BE9FD
+*.color14:    #9AEDFE
+*.color7:     #BFBFBF
+*.color15:    #E6E6E6
+```
+* 背景透明
+```
+URxvt.background:[80]#282A36
+```
+* 复制粘贴
+```
+!! copy & paste
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+URxvt.iso14755: false
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+```
+* 字体设置
+```
+URxvt.font:xft:JetBrains Mono:style=Regular:antialias=True:pixelsize=22
+URxvt.boldFont:xft:JetBrains Mono:style=Bold:antialias=True:pixelsize=22
+```
 ## shell
 shell是fish，相比zsh，开箱即用，支持自动补全，历史记录，很是方便。
 oh-my-fish是fish功能拓展，`curl -L https://get.oh-my.fish | fish`一键安装，可配套使用。
