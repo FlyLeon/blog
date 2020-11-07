@@ -42,13 +42,29 @@ categories: ["linux"]
    * .config/redshift/config设置 
 ```
 [redshift]
+; 设置白天和晚上的屏幕温度（中性为6500k）
+; 在2700K/6300K色温下更容易造成视疲劳
+temp-day=5800
+temp-night=4500
+
+; 逐渐增强或降低屏幕的温度，平滑过渡
+transition=1
+
+; 设置位置提供者为manual
 location-provider=manual
-temp-day=5500
-temp-night=3700
+
+; 设置randr调整方法
+adjustment-method=randr
 
 [manual]
-lat=39.90
-lon=116.38
+; 经纬度
+lon=
+lat= 
+
+; 调整屏幕'0',从0开始
+[randr]
+screen=0
+
 ```
    * 编辑 ~/.config/systemd/user/redshift.service文件
 ```
