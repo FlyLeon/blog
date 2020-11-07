@@ -92,10 +92,16 @@ chsh /usr/bin/fish
 ```
 {{< /admonition >}}
 
-oh-my-fish使用`omf'配置
+oh-my-fish使用`omf`配置
   - 列出所有安装包`omf list`。
   - 查看主题`omf theme`。
   - 安装主题`omf install **`。
+  - 更新    `omf update omf`
+  - 安装包  `omf search **`。
+  - 移除包  `omf remove **`。
+  - 排错    `omf doctor`
+  - 卸载    `omf destroy`
+  - 显示帮助`omf -h`
 ## 文本编辑 
 使用neovim，功能多，更新快。 插件使用vim-plug管理。
 
