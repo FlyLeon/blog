@@ -51,11 +51,14 @@ sudo timeshift --restore --snapshot '2019-07-16_16-35-42' --skip-grub
 
 # 安装 xanmod 内核
 优化桌面反应速度，启动速度，减少内存占用。
-
 ```
-yay -S linux-xanmod linux-xanmod-header
+yay -S linux-xanmod linux-xanmod-header --editmenu
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
+{{< admonition tip >}}
+可以通过编辑PKGBUILD文件，将其中`_microarchitectrue=0`改为自己的CPU类型，来简单优化一下。
+CPU类型缺省会在编译过程中提示。
+{{< /admonition >}}
 # EFI STUB 启动
 可使用EFI STUB加快启动速度。
 {{< admonition >}}
