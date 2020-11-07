@@ -91,6 +91,12 @@ oh-my-fish是fish功能拓展，`curl -L https://get.oh-my.fish | fish`一键安
 chsh /usr/bin/fish
 ```
 {{< /admonition >}}
+
+安装starship更改提示符，在 ~/.config/fish/config.fish 的最后，添加以下内容：
+```
+# ~/.config/fish/config.fish
+starship init fish | source
+```
 ## 文本编辑 
 使用neovim，功能多，更新快。 插件使用vim-plug管理。
 
