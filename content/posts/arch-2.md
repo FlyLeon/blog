@@ -40,15 +40,44 @@ categories: ["linux"]
 ## 护眼程序
    * 安装redshift
    * .config/redshift/config设置 
-   * 编辑systemd文件，加入自启动
+```
+[redshift]
+location-provider=manual
+temp-day=5500
+temp-night=3700
+
+[manual]
+lat=39.90
+lon=116.38
+```
+   * 编辑 ~/.config/systemd/user/redshift.service文件
+```
+[Unit]
+Description=Redshift display colour temperature adjustment
+Documentation=http://jonls.dk/redshift/
+After=graphical-session.target
+
+[Service]
+ExecStart=@bindir@/redshift
+Restart=always
+
+[Install]
+WantedBy=graphical-session.target
+```
+   * 加入自启动
+```
+systemctl --user enable redshift
+```
 ## SSD开启trim
 ```
 sudo systemctl enable fstrim.timer
 sudo systemctl start fstrim.service
 ```
 ## 升级固件版本
-   * fwupd
-   * fwupdmgr update
+安装fwupd
+```
+sudo fwupdmgr update
+```
 ## BOSS Q35 蓝牙连接
    * 编辑 vim /etc/bluetooth/main.conf ，将 
 ```
