@@ -92,11 +92,10 @@ chsh /usr/bin/fish
 ```
 {{< /admonition >}}
 
-安装starship更改提示符，在 ~/.config/fish/config.fish 的最后，添加以下内容：
-```
-# ~/.config/fish/config.fish
-starship init fish | source
-```
+oh-my-fish使用`omf'配置
+  - 列出所有安装包`omf list`。
+  - 查看主题`omf theme`。
+  - 安装主题`omf install **`。
 ## 文本编辑 
 使用neovim，功能多，更新快。 插件使用vim-plug管理。
 
