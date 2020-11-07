@@ -39,7 +39,8 @@ categories: ["linux"]
 ```
 ## 护眼程序
    * 安装redshift
-   * 编辑 systemd 文件，加入自启动
+   * .config/redshift/config设置 
+   * 编辑systemd文件，加入自启动
 ## SSD开启trim
 ```
 sudo systemctl enable fstrim.timer
