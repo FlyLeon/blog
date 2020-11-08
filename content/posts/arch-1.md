@@ -70,15 +70,15 @@ sudo efibootmgr --disk /dev/nvme0n1 --part 1 --create --label "Arch" --loader /v
 
 ```
 ## 清理
-### 清理孤立包
+- 清理孤立包
 ```
 sudo pacman -Rns $(pacman -Qtdq)
 ```
-### 清理日志
+- 清理日志
 ```
 journalctl --vacum-size=50M
 ```
-### 清理缓存
+- 清理缓存
 
 慎用`sudo pacman -Scc`暴力清理，可以安装pacman-contrib包使用paccache清理。paccache清理缺省保留最近3次的升级的软件包，方便今后降级，而且通过参数可以控制清理内容。如`paccache -d`可以先查看删除内容,`paccache -r`删除缓冲包，`pacchche -rk1`删除最近一次升级外缓存包等等。
 ## makepkg速度优化
