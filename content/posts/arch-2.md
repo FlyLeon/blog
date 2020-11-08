@@ -6,14 +6,14 @@ categories: ["linux"]
 ---
 >archlinux 安装配置的文章网上很多，大多涉及源设置，输入法，字体美化，终端设置等等，但仍有很多细节缺失，为此将自己完善Thinkpad X1 carbon 7th 的过程简要记录备忘。
 
-## BIOS 设置
+### BIOS 设置
    * 禁止 "Secure Boot" Security -> Secure Boot - Set to "Disabled". 
    * 节能  禁止 Config -> Thunderbolt BIOS Assist Mode - Set to "Enabled"
    * 休眠模式 Config -> Power -> Sleep State
      引用自archlinux wiki
-## 安装网卡驱动 
+### 安装网卡驱动 
    broadcom-wl-dkms，每次升级内核后，都自动安装。
-## 音质提升
+### 音质提升
    * ~/.config/pulse/daemon.conf
 ```
      default-sample-format = float32le
@@ -37,7 +37,7 @@ categories: ["linux"]
      slave.pcm hw   
     }
 ```
-## 护眼程序
+### 护眼程序
    * 安装redshift
    * .config/redshift/config设置 
 ```
@@ -84,17 +84,17 @@ WantedBy=graphical-session.target
 ```
 systemctl --user enable redshift
 ```
-## SSD开启trim
+### SSD开启trim
 ```
 sudo systemctl enable fstrim.timer
 sudo systemctl start fstrim.service
 ```
-## 升级固件版本
+### 升级固件版本
 安装fwupd
 ```
 sudo fwupdmgr update
 ```
-## BOSS Q35 蓝牙连接
+### BOSS Q35 蓝牙连接
    * 编辑 vim /etc/bluetooth/main.conf ，将 
 ```
 # ControllerMode = dual改为ControllerMode = bredr，重启bluetooth服务。
@@ -103,7 +103,7 @@ sudo fwupdmgr update
 ```
 pacmd set-card-profile 1 a2dp_sink
 ```
-## dock
+### dock
     * 安装plank，将状态栏放于顶部
-##  全局菜单
+### 全局菜单
     * vala-appmenu

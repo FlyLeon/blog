@@ -6,11 +6,11 @@ tags : ["vps"]
 ---
 > 为便于VPS管理设置，我们需要开启SSH，安全起见，SSH需要在/etc/ssh/sshd_config中进行以下设置。
 
-## 在服务器端设置
+### 在服务器端设置
 * 禁止root用户登录，找到`PermitRootLogin yes`改为no
 * 禁止密码登录，找到`PasswordAuthentication yes`，改为no。
 * 改变缺省端口，找到`Port 22`改为其他端口
-## 在客户端设置
+### 在客户端设置
 * 使用ssh-keygen生成key
 默认保存于.ssh目录中,id_rsa 为私钥，id_rsa.pub 为公钥。。
 ```
