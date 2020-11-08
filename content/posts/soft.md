@@ -1,5 +1,5 @@
 ---
-title: "linux常用软件选择"
+title: "linux常用软件"
 date: 2020-11-01T14:49:57+08:00
 categories : ["linux"]
 tags : ["software"]
