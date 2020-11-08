@@ -1,5 +1,5 @@
 ---
-title: "我使用的主要软件"
+title: "linux常用软件选择"
 date: 2020-11-01T14:49:57+08:00
 categories : ["linux"]
 tags : ["software"]
