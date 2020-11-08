@@ -6,18 +6,18 @@ tags : ["vps"]
 ---
 >hugo是快速的静态博客系统，可部署于github。我选择的是LoveIt主题,当然even也是很好的主题，但更适合文字博客，偏技术类博客loveit更现代，更适合。loveit功能很全，评论，搜索简单设置开箱即用，比较方便，设置文档也比较丰富。
 
-### 安装hugo
+## 安装hugo
 archlinux下安装hugo非常简单，只需一条命令，一个文件。
 ```
 sudo pacman -S hugo
 ```
-### 配置hugo
-* 建立博客
+## 配置hugo
+- 建立博客
 使用hugo建立名为blog的本地博客。
 ```
 hugo new site blog
 ```
-* 选择主题并编辑config
+- 选择主题并编辑config
 
 进入blog目录，初始化git，下载主题，可以使用github的submodule功能添加你喜欢的主题。下面以LoveIt主题为例，一般主题设置可以copy主题目录内 examplesite内内容到blog下使用。比较重要的是config.coml内设置。
 ```
@@ -25,17 +25,17 @@ cd blog
 git init
 git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 ```
-* 新建文章并编译
+- 建文章并编译
 不同主题要求的位置不同，需要注意，这点可以参照主题说明。
 ```
 hugo new posts/<文章名>.md
 hugo
 ```
-* 本地测试
+- 本地测试
 ```
 hugo serve --buildDrafts
 ```
-### 使用gihub管理blog和文章
+## 使用gihub管理blog和文章
 
 我们需要建立两个repo，分别用于文章管理和博客发布。其中博客发布我使用的是建立<用户名>.github.io，相对比较简单。
 ```
@@ -98,7 +98,7 @@ git push -u origin master
 chmod +x deploy.sh
 ./deploy.sh
 ```
-### LoveIt设置
+## LoveIt设置
 编辑config.coml,
 
 * 设置baseURL中文显示
@@ -112,7 +112,7 @@ logo = "/images/kiss-wink-heart-regular.svg
 ```
  此svg可从awesome font网站下载放入images目录。
 
-### 其他机器使用
+## 其他机器使用
 ```
 git clone <文章管理repo> blog
 cd blog
@@ -124,7 +124,7 @@ cd ..
 cd themes/LoveIt
 git checkout master 
 ```
-### 配置自己域名
+## 配置自己域名
 * 设置域名CNAME
 在域名管理页面设置域名CNAME指向你的博客eopo。
 * 设置博客repo
