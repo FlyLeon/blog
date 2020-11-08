@@ -80,7 +80,7 @@ journalctl --vacum-size=50M
 ```
 * 清理缓存
 
-慎用`sudo pacman -Scc`暴力清理，可以安装pacman-contrib包使用paccache清理。paccache清理缺省保留最近3次的升级的软件包，方便今后降级，而且通过参数可以控制清理内容。如`paccache -d`可以先查看删除内容,`paccache -r`删除缓冲包，`pacchche -rk`删除最近一次升级外缓存包等等。
+慎用`sudo pacman -Scc`暴力清理，可以安装pacman-contrib包使用paccache清理。paccache清理缺省保留最近3次的升级的软件包，方便今后降级，而且通过参数可以控制清理内容。如`paccache -d`可以先查看删除内容,`paccache -r`删除缓冲包，`pacchche -rk1`删除最近一次升级外缓存包等等。
 # makepkg速度优化
 
 新建 ~/.makepkg.conf, 写入如下内容，优化生成的二进制文件， 加快编译速度， 加快软件包生成速度。

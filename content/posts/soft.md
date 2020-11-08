@@ -79,8 +79,8 @@ URxvt.iso14755_52: false
 ```
 * 字体设置
 ```
-URxvt.font:xft:JetBrains Mono:style=Regular:antialias=True:pixelsize=22
-URxvt.boldFont:xft:JetBrains Mono:style=Bold:antialias=True:pixelsize=22
+URxvt.font:xft:Hack:style=Regular:antialias=True:pixelsize=22
+URxvt.boldFont:xft:Hack:style=Bold:antialias=True:pixelsize=22
 ```
 ## shell
 shell是fish，相比zsh，开箱即用，支持自动补全，历史记录，很是方便。
@@ -352,3 +352,31 @@ MODIFIERS="@im=fcitx"
 {{< /admonition >}}
 # 文件管理器 
 ranger是一个终端文件管理器，使用键盘操作，在wayland下需安装w3m使用图片预览功能。
+# 字体设置
+中文字体我安装了免费的文泉驿正黑、文泉驿微米黑、方正书宋;英文终端字体选择了Hack。字体大多可通过`yay`自动安装，方正书宋选择下载后手动安装。archlinux中文设置已比较成熟，我仅在chrome和urxvt中自定义了字体。chrome在设置中设置自定义字体，标准字体为方正书宋，Serif 字体为方正书宋，Sans-serif 字体为文泉驿微米黑，宽度固定的字体为文泉驿等宽微米黑。urxvt使用Hack字体，具体见urvxt设置部分。
+* 字体手动安装
+将欲安装字体拷入`/usr/share/fonts目录中，运行`fv-cache`完成安装。
+```
+sudo cp 字体.ttf /usr/share/fonts/字体.ttf
+sudo fv-cache -v -f
+```
+* 查看已安装字体
+```
+fc-list | grep 字体名
+```
+{{< admonition  tip >}}
+字体名与安装软件包名一般并不一直，多为字体名首字母大写，可多试几次。
+不是所有字体在urxvt中都可使用。
+如archlnux中Hack字体，安装使用
+```
+yay -S ttf-hack
+```
+查看字体使用`fc-list | grep hack `并无结果。要使用Hack查询，`fc-list | grep Hack`，结果显示;
+```
+/usr/share/fonts/TTF/Hack-Italic.ttf: Hack:style=Italic
+/usr/share/fonts/TTF/Hack-Bold.ttf: Hack:style=Bold
+/usr/share/fonts/TTF/Hack-Regular.ttf: Hack:style=Regular
+```
+系统内字体名为style前名称，即Hack。 
+{{< /admonition >}}
+

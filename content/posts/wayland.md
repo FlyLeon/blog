@@ -79,9 +79,8 @@ client.urgent     $ubgcolor  $ubgcolor  $textcolor $ubgcolor
  bar {
      position top
      font xft:Font Awesome 5 16 
-     # When the status_command prints a new line to stdout, swaybar updates.
-     # The default just shows the current date and time.
- #      status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+     icon_theme Adwaita    
+ #   status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
  
       status_command i3status 
       colors {
