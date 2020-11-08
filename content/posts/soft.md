@@ -163,12 +163,12 @@ set termguicolors
 set background=dark
 highlight Normal guibg=NONE ctermbg=None
 ```
-##$ 配色
+### 配色
 可以为fish，kitty，neovim均安装使用流行的dracula配色，这方面搜索dracula网站即可，说明很详细。
 {{< admonition tip >}}
 neovim颜色可按照vim配置说明操作即可。
 {{< /admonition >}}
-## 私有网盘
+### 私有网盘
 filebrowser是一款简单、方便的网盘软件，只需一个文件。
 
 /etc/filebrowser/filebrowser.json
@@ -350,7 +350,7 @@ MODIFIERS="@im=fcitx"
 {{< admonition tip >}}
 更换Adwaita/缺省难看的键盘图标，可以安装其他主题替换/usr/share/icons/Adwaita/32x32/legacy/input-keyboard.png文件。
 {{< /admonition >}}
-## 文件管理器 
+### 文件管理器 
 ranger是一个终端文件管理器，使用键盘操作，在wayland下需安装w3m使用图片预览功能。
 ### 字体设置
 中文字体我安装了免费的文泉驿正黑、文泉驿微米黑、方正书宋;英文终端字体选择了Hack。字体大多可通过`yay`自动安装，方正书宋选择下载后手动安装。archlinux中文设置已比较成熟，我仅在chrome和urxvt中自定义了字体。chrome在设置中设置自定义字体，标准字体为方正书宋，Serif 字体为方正书宋，Sans-serif 字体为文泉驿微米黑，宽度固定的字体为文泉驿等宽微米黑。urxvt使用Hack字体，具体见urvxt设置部分。

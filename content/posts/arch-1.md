@@ -59,7 +59,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 可以通过编辑PKGBUILD文件，将其中`_microarchitectrue=0`改为自己的CPU类型，来简单优化一下。
 CPU类型缺省会在编译过程中提示。
 {{< /admonition >}}
-# EFI STUB 启动
+### EFI STUB 启动
 可使用EFI STUB加快启动速度。
 {{< admonition >}}
 若使用EFI STUB, 安装时需将EFI安装到boot分区。请将part换为自己的BOOT分区，将UUID改为自己BOOT分区。

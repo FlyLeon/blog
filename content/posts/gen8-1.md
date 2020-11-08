@@ -67,5 +67,5 @@ proxmox 是一款免费虚拟机软件，基于debian，使用qemu，lxc虚拟�
 ### synology
 群辉是比较常用的NAS它的软件是基于linux开发，功能强大，使用模块化管理，拓展性强，稳定性高。我安装了一个它的破解后的虚拟机，主要用作NAS和照片管理。
 最新资源在[xpenology](https://xpenology.com/forum/)上可以找到。
-##  软路由
+###  软路由
 常见的pc软路由软件有openwart，ros，voxy，其中lede是基于openwrt整合了较多功能，我们一般使用lead即可。ros是收费商业软件，稳定性和性能据说不错，不过无法拓展功能。voxy也是开源软件，但也无法拓展。lede编译比较复杂，依赖很多，我们可以使用现成的[docker](https://github.com/jandelgado/lede-dockerbuilder)来编译，方便很多。
