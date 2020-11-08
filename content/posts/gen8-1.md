@@ -4,7 +4,7 @@ date: 2020-11-01T10:30:22+08:00
 categories : ["linux"]
 tags : ["vps","gen8"]
 ---
->HP gen8时微型4盘位的服务器，比较适合做NAS。自己也海淘了一台，升级了CPU(1265v2)和内存(16M)，安装了Proxmox虚拟机，虚拟机内安装了windows server 2019,synology,centos 7,还是很稳定的。
+>HP gen8是微型4盘位的服务器，比较适合做NAS。自己也海淘了一台，升级了CPU(1265v2)和内存(16M)，安装了Proxmox虚拟机，虚拟机内安装了windows server 2019,synology,centos 7,还是很稳定的。
 
 ### ilo静态ip地址设置
 ilo是gen8的特色，方便服务器远程管理，无需连接显示器核键盘。使用自动获取ip，每次连接很不方便，可以为设置静态地址方便连接。目前我安装的ilo版本是2.75，支持使用html5远程控制管理，比较方便。
