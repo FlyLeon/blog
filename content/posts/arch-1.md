@@ -84,7 +84,6 @@ journalctl --vacum-size=50M
 ## makepkg速度优化
 
 新建 ~/.makepkg.conf, 写入如下内容，优化生成的二进制文件， 加快编译速度， 加快软件包生成速度。
-
 ```
 CFLAGS="-march=native -O2 -pipe -fno-plt"
 CXXFLAGS="-march=native -O2 -pipe -fno-plt"
