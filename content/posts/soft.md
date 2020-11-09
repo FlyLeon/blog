@@ -79,8 +79,8 @@ URxvt.iso14755_52: false
 ```
 * 字体设置
 ```
-URxvt.font:xft:Hack:style=Regular:antialias=True:pixelsize=22
-URxvt.boldFont:xft:Hack:style=Bold:antialias=True:pixelsize=22
+URxvt.font:xft:Source Code Pro:style=Regular:antialias=True:pixelsize=22
+URxvt.boldFont:xft:Source Code Pro:style=Bold:antialias=True:pixelsize=22
 ```
 ## shell
 shell是fish，相比zsh，开箱即用，支持自动补全，历史记录，很是方便。
@@ -97,7 +97,7 @@ oh-my-fish使用`omf`配置
   - 查看主题`omf theme`。
   - 安装主题`omf install **`。
   - 更新    `omf update omf`
-  - 安装包  `omf search **`。
+  - 搜索包  `omf search **`。
   - 移除包  `omf remove **`。
   - 排错    `omf doctor`
   - 卸载    `omf destroy`
@@ -169,9 +169,10 @@ highlight Normal guibg=NONE ctermbg=None
 neovim颜色可按照vim配置说明操作即可。
 {{< /admonition >}}
 ## 私有网盘
-filebrowser是一款简单、方便的网盘软件，只需一个文件。
+filebrowser是一款简单、方便的网盘软件，安装只需一个文件。
+* 设置
 
-/etc/filebrowser/filebrowser.json
+编辑`/etc/filebrowser/filebrowser.json`
 ```
   "port": 7000,
   "noAuth": false,
@@ -189,8 +190,12 @@ filebrowser是一款简单、方便的网盘软件，只需一个文件。
   "allowNew": true,
   "commands": [
     "wget"
+  ]
+}
 ```
-/etc/systemd/system/filebrowser.service
+* 自启动
+
+编辑`/etc/systemd/system/filebrowser.service`
 ```
 [Unit]
 Description=The filebrowser Process Manager
@@ -205,10 +210,14 @@ PrivateTmp=true
 [Install]
 WantedBy=multi-user.target
 ```
+* 文件目录根设置
+
+登录后，点击[设置]->[全局设置]->[用户默认设置]，将[目录范围]改为你想要的文件夹。
 ## frp内网穿透
 我们的宽带一般是没有公网地址的，为了能访问家中的nas服务器，需要安装内网穿透软件frp。
+* 自启动
 
-/etc/systemd/system/frps.service
+编辑`/etc/systemd/system/frps.service`。
 ```
 [Unit]
 Description=Frp Server Service
@@ -224,7 +233,9 @@ ExecStart=/usr/bin/frps -c /etc/frps/frps.ini
 [Install]
 WantedBy=multi-user.target
 ```
-/etc/frps/frps.ini
+* 设置
+
+编辑`/etc/frps/frps.ini`。
 ```
 # [common] is integral section
 [common]
@@ -232,113 +243,34 @@ WantedBy=multi-user.target
 # in square brackets, as in "[::1]:80", "[ipv6-host]:http" or "[ipv6-host%zone]:80"
 bind_addr = 0.0.0.0
 bind_port = 5500
-
 # udp port to help make udp hole to penetrate nat
 #bind_udp_port =
-
 # udp port used for kcp protocol, it can be same with 'bind_port'
 # if not set, kcp is disabled in frps
 #kcp_bind_port =
-
 # specify which address proxy will listen for, default value is same with bind_addr
 # proxy_bind_addr = 127.0.0.1
-
 # if you want to support virtual host, you must set the http port for listening (optional)
 # Note: http port and https port can be same with bind_port
 vhost_http_port = 8080
 vhost_https_port = 4433
-
-# response header timeout(seconds) for vhost http server, default is 60s
-# vhost_http_timeout = 60
-
-# TcpMuxHttpConnectPort specifies the port that the server listens for TCP
-# HTTP CONNECT requests. If the value is 0, the server will not multiplex TCP
-# requests on one single port. If it's not - it will listen on this value for
-# HTTP CONNECT requests. By default, this value is 0.
-# tcpmux_httpconnect_port = 1337
-
 # set dashboard_addr and dashboard_port to view dashboard of frps
 # dashboard_addr's default value is same with bind_addr
 # dashboard is available only if dashboard_port is set
 dashboard_addr = 0.0.0.0
 dashboard_port = 6443
-
 # dashboard user and passwd for basic auth protect, if not set, both default value is admin
-dashboard_user = leon
-dashboard_pwd = Gjbyhy@72
-
-# enable_prometheus will export prometheus metrics on {dashboard_addr}:{dashboard_port} in /metrics api.
-enable_prometheus = true
-
-# dashboard assets directory(only for debug mode)
-# assets_dir = ./static
-# console or real logFile path like ./frps.log
-log_file = ./frps.log
-
-# trace, debug, info, warn, error
-log_level = info
-
-log_max_days = 3
-
-# disable log colors when log_file is console, default is false
-disable_log_color = false
-
-# DetailedErrorsToClient defines whether to send the specific error (with debug info) to frpc. By default, this value is true.
-detailed_errors_to_client = true
-
+dashboard_user = 
+dashboard_pwd = 
 # AuthenticationMethod specifies what authentication method to use authenticate frpc with frps.
 # If "token" is specified - token will be read into login message.
 # If "oidc" is specified - OIDC (Open ID Connect) token will be issued using OIDC settings. By default, this value is "token".
 authentication_method = token
-
-# AuthenticateHeartBeats specifies whether to include authentication token in heartbeats sent to frps. By default, this value is false.
-authenticate_heartbeats = false
-
-# AuthenticateNewWorkConns specifies whether to include authentication token in new work connections sent to frps. By default, this value is false.
-authenticate_new_work_conns = false
-
 # auth token
 token = 
-
-# OidcClientId specifies the client ID to use to get a token in OIDC authentication if AuthenticationMethod == "oidc".
-# By default, this value is "".
-oidc_client_id =
-
-# OidcClientSecret specifies the client secret to use to get a token in OIDC authentication if AuthenticationMethod == "oidc".
-# By default, this value is "".
-oidc_client_secret =
-
-# OidcAudience specifies the audience of the token in OIDC authentication if AuthenticationMethod == "oidc". By default, this value is "".
-oidc_audience =
- OidcTokenEndpointUrl specifies the URL which implements OIDC Token Endpoint.
-# It will be used to get an OIDC token if AuthenticationMethod == "oidc". By default, this value is "".
-oidc_token_endpoint_url =
-
-# heartbeat configure, it's not recommended to modify the default value
-# the default value of heartbeat_timeout is 90
-# heartbeat_timeout = 90
-
-# only allow frpc to bind ports you list, if you set nothing, there won't be any limit
-allow_ports = 2000-3000,3001,3003,4000-50000
-
-# pool_count in each proxy will change to max_pool_count if they exceed the maximum value
-max_pool_count = 5
-
-# max ports can be used for each client, default value is 0 means no limit
-max_ports_per_client = 0
-
-# TlsOnly specifies whether to only accept TLS-encrypted connections. By default, the value is false.
-tls_only = false
-
 # if subdomain_host is not empty, you can set subdomain when type is http or https in frpc's configure file
 # when subdomain is test, the host used by routing is test.frps.com
 subdomain_host = frps.com
-
-# if tcp stream multiplexing is used, default is true
-tcp_mux = true
-# custom 404 page for HTTP requests
-# custom_404_page = /path/to/404.h
-
 ```
 ## 中文输入法
 使用fcitx，在.pam_environmentv中设置。
