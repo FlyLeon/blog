@@ -79,8 +79,8 @@ URxvt.iso14755_52: false
 ```
 * 字体设置
 ```
-URxvt.font:xft:Source Code Pro:style=Regular:antialias=True:pixelsize=22
-URxvt.boldFont:xft:Source Code Pro:style=Bold:antialias=True:pixelsize=22
+URxvt.font:xft:Inconsolata Nerd Font Mono:style=Regular:antialias=True:pixelsize=23
+URxvt.boldFont:xft:Inconsolata Nerd Font Mono:style=Bold:antialias=True:pixelsize=23
 ```
 ## shell
 shell是fish，相比zsh，开箱即用，支持自动补全，历史记录，很是方便。

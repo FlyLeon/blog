@@ -78,7 +78,7 @@ client.urgent     $ubgcolor  $ubgcolor  $textcolor $ubgcolor
 ```
  bar {
      position top
-     font xft:Font Awesome 5 16 
+     font pango:Font Awesome 5 Free 16 
      icon_theme Adwaita    
  #   status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
  
