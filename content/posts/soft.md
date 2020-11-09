@@ -21,26 +21,13 @@ URxvt.preeditType:Root
 URxvt.inputMethod:fcitx
 ```
 * 使用守护进程模式
-urxvt可采用守护模式使用，使用urxvtc启动终端，节省内存，更加快速。这里采用systemd方式启动urxvtd守护进程。
-
-  + 新增`sudo /etc/systemd/system/urxvtd@.service`服务
-  + 启动服务
+urxvt可采用守护模式使用，使用urxvtc启动终端，节省内存，更加快速。这里在sway内启动urxvtd守护进程。
 ```
-[Unit]
-Description=RXVT-Unicode Daemon
-
-[Service]
-User=%i
-ExecStart=/usr/bin/urxvtd -q -o
-
-[Install]
-WantedBy=multi-user.target
+exec urvxtd -q -f
 ```
-```
-systemctl start urxvtd@username.service
-systemctl enable urxvtd@username.service
-```
-
+{{< admonition >}}
+推荐sway内启动守护进程，可以采用座面的语言设置，避免出现乱码。
+{{< /admonition >}}
 * Dracula 配色
 ```
 ! Dracula Xresources palette
