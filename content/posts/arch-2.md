@@ -60,7 +60,7 @@ transition=1
 location-provider=manual
 
 ; 设置randr调整方法
-adjustment-method=randr
+adjustment-method=wayland
 
 [manual]
 ; 经纬度
