@@ -22,7 +22,7 @@ URxvt.preeditType:Root
 URxvt.inputMethod:fcitx
 ```
 * 使用守护进程模式
-urxvt可采用守护模式使用，使用urxvtc启动终端，节省内存，更加快速。这里采用在sway内启动urxvtd守护进程。
+urxvt可采用守护模式，使用urxvtc启动终端，节省内存，更加快速。这里采用在sway内启动urxvtd守护进程。
 ```
 exec urvxtd -q -f
 ```

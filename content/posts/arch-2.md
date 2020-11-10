@@ -40,9 +40,9 @@ categories: ["linux"]
     }
 ```
 ## 护眼程序
-### 安装redshift
+### 安装redshift-wayland-git
 ```
-sudo  pacman -S redshift
+yay -S redshift-wayland-git
 ```
 ### 设置
 编辑 .config/redshift/config设置 
@@ -72,24 +72,12 @@ lat=
 screen=0
 
 ```
-### 设置
-编辑 ~/.config/systemd/user/redshift.service文件
+### 启动
+编辑 ~/redshift.sh文件,增加可执行属性，手动启动。
 ```
-[Unit]
-Description=Redshift display colour temperature adjustment
-Documentation=http://jonls.dk/redshift/
-After=graphical-session.target
+#!/bin/sh
+nohup redshift -m wayland > /dev/null 2>&1 &
 
-[Service]
-ExecStart=@bindir@/redshift
-Restart=always
-
-[Install]
-WantedBy=graphical-session.target
-```
-### 加入自启动
-```
-systemctl --user enable redshift
 ```
 ## SSD开启trim
 ```
