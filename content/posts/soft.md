@@ -15,61 +15,7 @@ ventoy是EFI启动模式下制作USB启动盘的工具，与以往不同，它�
 * 一定要安装aur中的`urxvt-unicode-truecolor`来支持中文和真彩色。
 * 在wayland中，urxvt可通过.Xdefaults设置，以下设置均在其中。
 * 慎用URxvt.letterSpace设置字间距，在我机器上这为不同字体设置带来问题。
-{{</admonition >}}
-* fcitx支持
-```
-URxvt.preeditType:Root
-URxvt.inputMethod:fcitx
-```
-* 使用守护进程模式
-urxvt可采用守护模式，使用urxvtc启动终端，节省内存，更加快速。这里采用在sway内启动urxvtd守护进程。
-```
-exec urvxtd -q -f
-```
-{{< admonition >}}
-推荐sway内启动守护进程，可以采用桌面的语言设置，避免出现乱码。
 {{< /admonition >}}
-* Dracula 配色
-```
-! Dracula Xresources palette
-*.foreground: #F8F8F2
-*.background: #282A36
-*.color0:     #000000
-*.color8:     #4D4D4D
-*.color1:     #FF5555
-*.color9:     #FF6E67
-*.color10:    #5AF78E
-*.color3:     #F1FA8C
-*.color11:    #F4F99D
-*.color4:     #BD93F9
-*.color12:    #CAA9FA
-*.color5:     #FF79C6
-*.color13:    #FF92D0
-*.color6:     #8BE9FD
-*.color14:    #9AEDFE
-*.color7:     #BFBFBF
-*.color15:    #E6E6E6
-```
-* 背景透明
-```
-URxvt.background:[80]#282A36
-```
-* 复制粘贴
-```
-!! copy & paste
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-URxvt.keysym.Control-Meta-c: builtin-string:
-URxvt.keysym.Control-Meta-v: builtin-string:
-URxvt.iso14755: false
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-```
-* 字体设置
-```
-URxvt.font:xft:Inconsolata Nerd Font Mono:style=Regular:antialias=True:pixelsize=23
-URxvt.boldFont:xft:Inconsolata Nerd Font Mono:style=Bold:antialias=True:pixelsize=23
-```
 ## shell
 shell是fish，相比zsh，开箱即用，支持自动补全，历史记录，很是方便。
 oh-my-fish是fish功能拓展，`curl -L https://get.oh-my.fish | fish`一键安装，可配套使用。
@@ -260,20 +206,6 @@ token =
 # when subdomain is test, the host used by routing is test.frps.com
 subdomain_host = frps.com
 ```
-## 中文输入法
-使用fcitx，在.pam_environmentv中设置。
-```
-GTK_IM_MODULE DEFAULT=fcitx
-QT_IM_MODULE  DEFAULT=fcitx
-XMODIFIERS    DEFAULT=\@im=fcitx
-```
-{{< admonition tip >}}
-* 更换Adwaita/缺省难看的键盘图标，可以安装其他主题替换/usr/share/icons/Adwaita/32x32/legacy/input-keyboard.png文件。
-* 如仍无法切换输入模式可尝试重装fcitx，我的就是这样解决的，`sudo pacman -S fcitx`
-不知道是什么原因。
-{{< /admonition >}}
-## 文件管理器 
-ranger是一个终端文件管理器，使用键盘操作，在wayland下需安装w3m使用图片预览功能。
 ## 字体设置
 中文字体我安装了免费的文泉驿正黑、文泉驿微米黑、方正书宋;英文终端字体选择了Hack。字体大多可通过`yay`自动安装，方正书宋选择下载后手动安装。archlinux中文设置已比较成熟，我仅在chrome和urxvt中自定义了字体。chrome在设置中设置自定义字体，标准字体为方正书宋，Serif 字体为方正书宋，Sans-serif 字体为文泉驿微米黑，宽度固定的字体为文泉驿等宽微米黑。urxvt使用Hack字体，具体见urvxt设置部分。
 * 字体手动安装
@@ -286,19 +218,4 @@ sudo fv-cache -v -f
 ```
 fc-list | grep 字体名
 ```
-{{< admonition  tip >}}
-字体名与安装软件包名一般并不一致，多为字体名首字母大写，可多试几次。
-不是所有字体在urxvt中都可使用。
-如archlnux中Hack字体，安装使用
-```
-yay -S ttf-hack
-```
-查看字体使用`fc-list | grep hack `并无结果。要使用Hack查询，`fc-list | grep Hack`，结果显示;
-```
-/usr/share/fonts/TTF/Hack-Italic.ttf: Hack:style=Italic
-/usr/share/fonts/TTF/Hack-Bold.ttf: Hack:style=Bold
-/usr/share/fonts/TTF/Hack-Regular.ttf: Hack:style=Regular
-```
-系统内字体名为style前名称，即Hack。 
-{{< /admonition >}}
 
