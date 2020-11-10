@@ -14,6 +14,7 @@ ventoy是EFI启动模式下制作USB启动盘的工具，与以往不同，它�
 {{< admonition tip>}}
 * 一定要安装aur中的`urxvt-unicode-truecolor`来支持中文和真彩色。
 * 在wayland中，urxvt可通过.Xdefaults设置，以下设置均在其中。
+* 慎用URxvt.letterSpace设置字间距，在我机器上这为不同字体设置带来问题。
 {{</admonition >}}
 * fcitx支持
 ```
@@ -262,12 +263,14 @@ subdomain_host = frps.com
 ## 中文输入法
 使用fcitx，在.pam_environmentv中设置。
 ```
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-MODIFIERS="@im=fcitx"
+GTK_IM_MODULE DEFAULT=fcitx
+QT_IM_MODULE  DEFAULT=fcitx
+XMODIFIERS    DEFAULT=\@im=fcitx
 ```
 {{< admonition tip >}}
-更换Adwaita/缺省难看的键盘图标，可以安装其他主题替换/usr/share/icons/Adwaita/32x32/legacy/input-keyboard.png文件。
+* 更换Adwaita/缺省难看的键盘图标，可以安装其他主题替换/usr/share/icons/Adwaita/32x32/legacy/input-keyboard.png文件。
+* 如仍无法切换输入模式可尝试重装fcitx，我的就是这样解决的，`sudo pacman -S fcitx`
+不知道是什么原因。
 {{< /admonition >}}
 ## 文件管理器 
 ranger是一个终端文件管理器，使用键盘操作，在wayland下需安装w3m使用图片预览功能。
