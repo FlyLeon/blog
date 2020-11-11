@@ -50,7 +50,7 @@ sudo timeshift --restore --snapshot '2019-07-16_16-35-42' --skip-grub
    关闭 watchdog
 
 ## 安装 xanmod 内核
-优化桌面反应速度，启动速度，减少内存占用。
+可以优化桌面反应速度，启动速度，减少内存占用。
 ```
 yay -S linux-xanmod linux-xanmod-header --editmenu
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -59,7 +59,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 * 可以通过编辑PKGBUILD文件，将其中`_microarchitectrue=0`改为自己的CPU类型，来简单优化一下。CPU类型缺省会在编译过程中提示,如没有，可以选择最接近的。
 * 如想使用cachy调度器，需要在PKGBUULD文件中将cachy=no改为yes。
 * 如需自定义kernel编译内容，可在PKGBUILD文件build内加入`make menuconfig`。
-* 如需定制内核，可插上所有使用的硬件、打开所需服务后，在PKGBUILD中build内加入`make localmodconfig`。使用后最大的变化就是编译时间和内核大小大为减少。，我的机器xanmod内核编译时间由近1小时减少到10份分钟，非常明显。
+* 如需精简内核，可插上所有使用的硬件、打开所需服务后，在PKGBUILD中build内加入`make localmodconfig`。使用后最大的变化就是编译时间和内核大小大为减少，我的机器xanmod内核编译时间由近1小时减少到10份分钟，非常明显。缺点是如需增加新硬件需重新编译。
 * 如需使用原有编译设定，可在PKGBUILD中build内加入`make olddefconfig` 。
 {{< /admonition >}}
 ## EFI STUB 启动
