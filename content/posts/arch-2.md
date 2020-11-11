@@ -72,13 +72,30 @@ lat=
 screen=0
 
 ```
-### 启动
-编辑 ~/redshift.sh文件,增加可执行属性，手动启动。
+### 自启动
+* 使用systemd方式启动，编辑 ~/config/systemctl/redshit.service。
 ```
-#!/bin/sh
-nohup redshift -m wayland > /dev/null 2>&1 &
+Unit]
+Description=Redshift display colour temperature
+adjustment
+Documentation=http://jonls.dk/redshift/
+After=graphical-session.target
 
+[Service]
+ExecStart=/usr/bin/redshift
+Restart=always
+
+[Install]
+WantedBy=graphical-session.target
 ```
+* 自启动
+```
+systemctl --user enable redshift.service
+systemctl --user start redshift.service
+```
+{{< admonition >}}
+一定要使用user方式systemd启动，否则直接放入/etc/systemd/system目录使用系统方式启动会启动失败。
+{{< /admonition >}}
 ## SSD开启trim
 ```
 sudo systemctl enable fstrim.timer
