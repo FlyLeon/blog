@@ -39,63 +39,6 @@ categories: ["linux"]
      slave.pcm hw   
     }
 ```
-## 护眼程序
-### 安装redshift-wayland-git
-```
-yay -S redshift-wayland-git
-```
-### 设置
-编辑 .config/redshift/config设置 
-```
-[redshift]
-; 设置白天和晚上的屏幕温度（中性为6500k）
-; 在2700K/6300K色温下更容易造成视疲劳
-temp-day=5800
-temp-night=4500
-
-; 逐渐增强或降低屏幕的温度，平滑过渡
-transition=1
-
-; 设置位置提供者为manual
-location-provider=manual
-
-; 设置randr调整方法
-adjustment-method=wayland
-
-[manual]
-; 经纬度
-lon=
-lat= 
-
-; 调整屏幕'0',从0开始
-[randr]
-screen=0
-
-```
-### 自启动
-* 使用systemd方式启动，编辑 ~/config/systemctl/redshit.service。
-```
-Unit]
-Description=Redshift display colour temperature
-adjustment
-Documentation=http://jonls.dk/redshift/
-After=graphical-session.target
-
-[Service]
-ExecStart=/usr/bin/redshift
-Restart=always
-
-[Install]
-WantedBy=graphical-session.target
-```
-* 自启动
-```
-systemctl --user enable redshift.service
-systemctl --user start redshift.service
-```
-{{< admonition >}}
-一定要使用user方式systemd启动，否则直接放入/etc/systemd/system目录使用系统方式启动会启动失败。
-{{< /admonition >}}
 ## SSD开启trim
 ```
 sudo systemctl enable fstrim.timer
