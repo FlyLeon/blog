@@ -25,17 +25,16 @@ station wlan0 connect  **
 {{< /admonition >}}
 
 ## pgp密钥导入
-部分yay软件需要pgp密钥，使用代理添加。
+部分yay软件需要pgp密钥，可使用代理添加。
 ```
 proxychains  gpg --keyserver keyserver.ubuntu.com --recv-keys **
 ```
 ## 临时增加 tmp大小
-编译xanmod需要
-
+编译xanmod需要。
 ```
 sudo mount -o remount,size=6G,noatime /tmp
 ```
-## timeshift恢复
+## timeshift备份
 
 使用timeshift可随时给系统做快照，实现增量备份。
 ```
@@ -47,8 +46,7 @@ sudo timeshift --restore --snapshot '2019-07-16_16-35-42' --skip-grub
 若无法进入系统，可使用manjaro安装盘启动，在终端中`sudo timeshift`，选择快照的恢复。
 {{< /admonition >}}
 ## 加快启动速度
-   关闭 watchdog
-
+   关闭 watchdog。
 ## 安装 xanmod 内核
 可以优化桌面反应速度，启动速度，减少内存占用。
 ```
@@ -56,11 +54,10 @@ yay -S linux-xanmod linux-xanmod-header --editmenu
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 {{< admonition tip >}}
-* 可以通过编辑PKGBUILD文件，将其中`_microarchitectrue=0`改为自己的CPU类型，来简单优化一下。CPU类型缺省会在编译过程中提示,如没有，可以选择最接近的。
-* 如想使用cachy调度器，需要在PKGBUULD文件中将cachy=no改为yes。
+* 可以通过编辑PKGBUILD文件，将其中`_microarchitectrue=0`改为自己的CPU类型，来简单优化一下。CPU类型缺省会在编译过程中提示，如没有自己cpu类型，可以选择最接近的。
+* 如想使用cachy调度器，需要在PKGBUULD文件中将`cachy=no`改为`yes`。
 * 如需自定义kernel编译内容，可在PKGBUILD文件build内加入`make menuconfig`。
-* 如需精简内核，可插上所有使用的硬件、打开所需服务后，在PKGBUILD中build内加入`make localmodconfig`。使用后最大的变化就是编译时间和内核大小大为减少，我的机器xanmod内核编译时间由近1小时减少到10份分钟，非常明显。缺点是如需增加新硬件需重新编译。
-* 如需使用原有编译设定，可在PKGBUILD中build内加入`make olddefconfig` 。
+* 如需精简内核，可插上所有使用的硬件、打开所需服务后，在PKGBUILD中build内加入`make localmodconfig`。使用后最大的变化就是编译时间和内核大小大为减少，我的机器xanmod内核编译时间由近1小时减少到10份分钟，非常明显，缺点是如需增加新硬件需重新编译。
 {{< /admonition >}}
 ## EFI STUB 启动
 可使用EFI STUB加快启动速度。
@@ -77,15 +74,14 @@ sudo efibootmgr --disk /dev/nvme0n1 --part 1 --create --label "Arch" --loader /v
 ```
 sudo pacman -Rns $(pacman -Qtdq)
 ```
-- 清理日志
+- 设置日志大小
 ```
 journalctl --vacum-size=50M
 ```
-- 清理缓存
+- 清理pacman缓存
 
 慎用`sudo pacman -Scc`暴力清理，可以安装pacman-contrib包使用paccache清理。paccache清理缺省保留最近3次的升级的软件包，方便今后降级，而且通过参数可以控制清理内容。如`paccache -d`可以先查看删除内容,`paccache -r`删除缓冲包，`pacchche -rk1`删除最近一次升级外缓存包等等。
 ## makepkg速度优化
-
 新建 ~/.makepkg.conf, 写入如下内容，优化生成的二进制文件， 加快编译速度， 加快软件包生成速度。
 ```
 CFLAGS="-march=native -O2 -pipe -fno-plt"
