@@ -27,11 +27,7 @@ draft: true
 |----|----|:-------:|
 |SSDT-ALS0.aml|仿冒环境光传感器||
 |SSDT-DMAC.aml|添加缺失的部件||
-|SSDT-DTPG.aml|SSDT基础补丁||
-|SSDT-GPRW.aml|6D 补丁|*|
-|SSDT-HPET.aml| IRQ冲突补丁|*|
 |SSDT-Keyboard-X1C6.aml|键盘补丁||
-|SSDT-MCHC.aml|内存控制器补丁||
 |SSDT-OCBAT0-TP_re80_tx70-80_x1c5th-6th_s12017_p51.aml|电池主补丁|*|
 |SSDT-Notify-LPCB|电池补丁||
 |SSDT-OCBATC-TP-LPCB|电池补丁||
@@ -39,10 +35,9 @@ draft: true
 |SSDT-PLUG-_PR.PR00.aml|注入 `x86` 实现 `CPU` 电源管理||
 |SSDT-PMCR.aml|添加缺失的部件||
 |SSDT-PNLF-R.aml|注入 `PNLF` 实现屏幕亮度调节||
-|SSDT-PTSWAK.aml|综合拓展补丁|*|
 |SSDT-PWRB.aml|添加缺失的部件||
-|SSDT-SBUS.aml|SMBus补丁||
-|SSDT-XOSI.aml|操作系统模拟补丁|*|
+|SSDT-OC-XOSI.aml|操作系统更名补丁|*|
+|SSDT-SMBU.aml|SMBUb补丁|
 ## kext
 |名称|功能|
 |----|----|
