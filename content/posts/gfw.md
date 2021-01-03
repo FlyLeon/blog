@@ -1,4 +1,3 @@
--./trojan-go -config config.json--
 title: "Gfw"
 date: 2020-12-28T16:35:59+08:00
 categories : ["linux"]
@@ -6,6 +5,7 @@ tags : ["vps"]
 draft: true
 ---
 >ssl /usr/local/ssl/tiantian.crt tiantian.key
+
 # ssl 证书
 # trojan
 'sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"'
@@ -139,7 +139,8 @@ f1g1ns2.dnspod.net
 # xray
 root用户'bash <(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh) install'
 使用*VLESS over TCP with XTLS + 回落 & 分流 to WHATEVER（终极配置）*
-配置’/usr/local/etc/xray/config.json‘
+配置’/usr/local/etc/xray/config.json‘。
+
 '''
 {
     "log": {
