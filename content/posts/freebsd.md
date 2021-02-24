@@ -76,6 +76,22 @@ xset rehash
 mixer 显示各设备音量
 
 ### 设置5.1声音
+编辑`/etc/sysctl.conf`
+```
+dev.pcm.0.play.vchanformat=s16le:5.1
+```
+### 设置音量调节按键
+修改dwm的`config.h`。
+```
+{0, XF86XK_AudioLowerVolume, spawn, SHCMD("mixer vol -5")},
+{0, XF86XK_AudioRaiseVolume, spawn, SHCMD("mixer vol +5 ")},
+{0, XF86XK_AudioMute, spawn, SHCMD("mixer -s 0")},
+```
+###  输出自动切换
+编辑`/etc/sysctl.conf
+```
+hw.snd.degault_auto=2
+```
 
 ## 升级
 
