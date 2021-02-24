@@ -1,9 +1,8 @@
-：wq---
+---
 title: "Thinkpad T400上安装配置Freebsd 12"
 date: 2021-02-24T11:47:40+08:00
 categories : ["freebsd"]
 tags : ["freebsd"]
-draft: false
 ---
 > 最近把一台T400的操作系统从Archlinux换成freeBSD，发现freeBSD更稳定，资源占用也更低。可能是使用人少的缘故，网上中文资源很少，也不准确。好在英文资料还不少，也很详细，参照安装也不难。下面简要记录自己走过的弯路，下面命令均需root权限。
 
