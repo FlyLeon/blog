@@ -23,7 +23,7 @@ tags : ["freebsd"]
 ```
 mkdir -p /usr/local/etc/pkg/repos
 ```
-替换其中url为'url: "pkg+http://mirrors.ustc.edu.cn/freebsd-pkg/${ABI}/latest'
+替换其中url为`pkg+http://mirrors.ustc.edu.cn/freebsd-pkg/${ABI}/latest`
 
 -禁用系统级 pkg 源
 ```
@@ -67,13 +67,13 @@ xset fp+ /usr/local/share/font/wqy
 xset rehash
 ```
 ### 其他设置
-使用picom背景透明，feh设置壁纸，slim登录。
+在`.xinitrc`中使用`picom`背景透明，`feh`设置壁纸，`slim`登录。
 ## 声音设置
 
-### 解决声音小问题
+### 解决音量小问题
 
-安装mixer调整音量，安装sndio
-mixer 显示各设备音量
+安装`mixer`调整音量，安装`sndio`改善音质。
+`mixer` 显示各设备音量，`mixer -s vol 100`设置音量为`100`。
 
 ### 设置5.1声音
 编辑`/etc/sysctl.conf`

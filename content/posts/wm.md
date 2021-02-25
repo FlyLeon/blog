@@ -1,18 +1,19 @@
 ---
-title: "我使用过的wm"
+title: "Archlinux设置窗口管理器(wm)"
 date: 2021-02-06T21:29:02+08:00
 categories : ["linux"]
 tags : ["wm"]
-draft: true
 ---
->最近试试在linux下使用title窗口管理器，包括大名鼎鼎的i3、bspwm、dwm、qtile和xmonad，发现打开了新世界。键盘快捷键的使用极大便利了操作，提高了效率，再使用传统的窗口管理器，极不适应。而且这些管理器普遍占用资源小，快速，便捷，使用方便。不过网上可参考的中文资源很少，资源往往分布在github、youtube和achlinux wiki上，有众多网友分享自己的配置，介绍自己的操作。他们原理和操作接近，用熟了其实差别很小。大家可以跟着安装试一下，你一定会发现一个新天地，爱上它的。
+>最近试试在archlinux下使用titling窗口管理器，包括大名鼎鼎的`i3、bspwm、dwm、qtile`和`xmonad`，发现打开了新世界。键盘快捷键的使用极大便利了操作，提高了效率，再使用传统的窗口管理器，极不适应。而且这些管理器普遍占用资源小，快速，便捷，使用方便。不过网上可参考的中文资源很少，资源往往分布在`github、youtube`和`achlinux wiki`上，有众多网友分享自己的配置，介绍自己的操作。他们原理和操作接近，用熟了其实差别很小。大家可以跟着安装试一下，你一定会发现一个新天地，爱上它的。
 
-## 善用Xprofile
+## 设置Xprofile
 * 设置多屏显示
-`xrande`
-* 设置运行fcitx
+使用`xrandr`设置显示。
 ```
-export PATH=$HOME/.local/bin:$PATH
+```
+* 设置运行fcitx
+
+```
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=\@im=fcitx
@@ -20,23 +21,19 @@ export XMODIFIERS=\@im=fcitx
 fcitx &
 ```
 * 设置壁纸
-`feh --scale-bg /PATH/TO/WALLPAPER &`
+使用`feh`来设置壁纸。在终端运行`feh --scale-bg /PATH/TO/WALLPAPER &`后，在`.Xprofile`中添加`~/.fehbg &`
 * 设置透明
-`picom -f'
-* 运行系统状态栏项目
+使用`picom`设置窗口透明，添加`picom -f'
+* 使用系统状态栏
+网络、蓝牙、usb挂载。
 ```
 nm-applet &
 blueman-applet &
 udiskie -t &
 ```
-* 运行`redshift &`
-## lightdm 使用
-* 设置壁纸
-* 主题
-* 图标
-* 头像
-## 多显示器设置
-## i3
-## bspwm 
-## dwm 
-## xmonad
+* 护眼
+添加`redshift &`
+## lightdm使用
+参照[Archlinux](),设置壁纸、主题、 图标和头像
+## 设置窗口管理器
+最简单的方法是直接使用别人在`gihub`上上传的`dotfiles`，再根据自己的情况做一些调整。我主要参考[dotfiles]()设置的窗口管理器设置，st使用[LuckSmithxyx]()的。
