@@ -36,4 +36,4 @@ udiskie -t &
 ## lightdm使用
 参照[Archlinux](),设置壁纸、主题、 图标和头像
 ## 设置窗口管理器
-最简单的方法是直接使用别人在`gihub`上上传的`dotfiles`，再根据自己的情况做一些调整。我主要参考[dotfiles]()设置的窗口管理器设置，st使用[LuckSmithxyx]()的。
+最简单的方法是直接使用别人在`gihub`上上传的`dotfiles`，再根据自己的情况做一些调整。我主要参考[dotfiles](https://github.com/antoniosarosi/dotfiles)设置的窗口管理器设置，st使用[LuckSmithxyx](https://github.com/LukeSmithxyz/st)的。
