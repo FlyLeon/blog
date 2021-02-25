@@ -1,4 +1,4 @@
----
+
 title: "Archlinux设置窗口管理器(wm)"
 date: 2021-02-06T21:29:02+08:00
 categories : ["linux"]
@@ -10,6 +10,14 @@ tags : ["wm"]
 * 设置多屏显示
 使用`xrandr`设置显示。
 ```
+# Screens
+hdmi=`xrandr | grep ' connected' | grep 'HDMI1' | awk '{print $1}'`
+
+if [ "$hdmi" = "HDMI1" ]; then
+xrandr --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate  normal --output DP1 --off --output DP2 --off --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --left-of eDP1 --output HDMI2 --off --output VIRTUAL1 --off
+else
+xrandr --output eDP1 --primary --mode 1920x1080  --pos 0x0 --rotate normal --output HDMI1 --off --output DP1 --off &
+fi
 ```
 * 设置运行fcitx
 
