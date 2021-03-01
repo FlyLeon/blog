@@ -1,3 +1,4 @@
+---
 title: "Gfw"
 date: 2020-12-28T16:35:59+08:00
 categories : ["linux"]

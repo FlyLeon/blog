@@ -1,4 +1,4 @@
-
+---
 title: "Archlinux设置窗口管理器(wm)"
 date: 2021-02-06T21:29:02+08:00
 categories : ["linux"]

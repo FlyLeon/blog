@@ -3,7 +3,6 @@ title: "黑苹果Thinkpad X1 7th carbon安装Big Sur"
 date: 2020-11-18T15:48:55+08:00
 categories : ["mac"]
 tags : ["bigsur"]
-draft: true
 ---
 > 我的笔记本电脑是Thinkpad X1 7th carbon，使用EFI启动，同时安装了windiws10，Big Sur和archlinux三套系统。其中黑苹果的安装最为繁琐，OpenCore安装完成使用还是很流畅。显示、声音、屏幕背光、电源管理和声音快捷键是最容易出问题的地方，这里简单记录备忘。
 
