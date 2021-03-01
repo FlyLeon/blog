@@ -9,9 +9,9 @@ draft: true
 
 # ssl 证书
 # trojan
-'sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"'
-'/usr/local/etc/trojan/config.json'
-'''
+`sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"`
+`/usr/local/etc/trojan/config.json`
+```
 {
     "run_type": "server",
     "local_addr": "0.0.0.0",
@@ -60,17 +60,17 @@ draft: true
         "ca": ""
     }
 }
-'''
+```
 # trojan-go 
-'''
+```
 wget https://github.com/p4gefau1t/trojan-go/releases/download/v0.5.1/trojan-go-linux-amd64.zip
 unzip -o trojan-go-linux-amd64.zip -d /usr/local/bin/trojan-go/trojan-go
 rm trojan-go-linux-amd64.zip
-'''
+```
 
-'vim /etc/systemd/system/trojan-go.service'
+`vim /etc/systemd/system/trojan-go.service`
 
-'''
+```
 [Unit]
 Description=Trojan-Go
 After=network.target nss-lookup.target
@@ -85,16 +85,16 @@ RestartSec=15
 
 [Install]
 WantedBy=multi-user.target
-'''
+```
 
-'systemctl enable trojan-go'
+`systemctl enable trojan-go`
 
-'''
+```
 mkdir -p /usr/local/etc/trojan-go
 vim /usr/local/etc/trojan-go/config.json
-'''
+```
 
-'''
+```
 {
     "run_type": "server",
     "local_addr": "0.0.0.0",
@@ -116,8 +116,8 @@ vim /usr/local/etc/trojan-go/config.json
         ]
     }
 }
-'''
-'./trojan-go -config config.json'
+```
+`./trojan-go -config config.json`
 # Cloudflare 设置
 将域名的 Namesever 指向 Cloudflare 所提供的地址，等待生效
 NS 记录更新后，将 Cloudflare 中域名的 A 记录指向服务器 IP，确保云朵为橙色（Proxied）
@@ -127,22 +127,22 @@ NS 记录更新后，将 Cloudflare 中域名的 A 记录指向服务器 IP，�
 在 Cloudflare 上获取域名的 Zone ID，记录之
 在 Cloudflare 的 My Profile 中生成一个 API Token，权限为 Zone Zone Read 和 Zone DNS Edit，Zone Resources 特指区域为 example.com，完成后记下 Token
 根据自己的需要在 Cloudflare 上进行其他设置（可选），例如配置 Always Use HTTPS、HSTS、Automatic HTTPS Rewrites、Auto Minify 等等，主要影响浏览器访问网站的效果
-'''
+```
 f1g1ns1.dnspod.net
 
 f1g1ns2.dnspod.net
-'''
-'d6f39e137d9e8e7355274680ed1e962e'
+```
+`d6f39e137d9e8e7355274680ed1e962e`
 
-'''
+```
 {"result":{"id":"9d6f1a4c7e2de89986478f1ed9c09428","status":"active"},"success":true,"errors":[],"messages":[{"code":10000,"message":"This API Token is valid and active","type":null}]}
-'''
+```
 # xray
 root用户'bash <(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh) install'
 使用*VLESS over TCP with XTLS + 回落 & 分流 to WHATEVER（终极配置）*
-配置’/usr/local/etc/xray/config.json‘。
+配置`/usr/local/etc/xray/config.json`。
 
-'''
+```
 {
     "log": {
         "loglevel": "warning"
@@ -306,6 +306,6 @@ root用户'bash <(curl -L https://github.com/XTLS/Xray-install/raw/main/install-
         }
     ]
 }
-'''
-使用UUID'5049f982-68e5-02f7-e977-e335bf417966'
+```
+使用UUID`5049f982-68e5-02f7-e977-e335bf417966`
 注意不同协议使用不同路径
