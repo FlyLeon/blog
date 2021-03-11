@@ -55,7 +55,7 @@ pkg mirror at pkg.freebsd.cn
 参照[FreeBSD on a Laptop](https://www.c0ffee.net/blog/freebsd-on-a-laptop/)
 ### 编译使用suckless软件
 
-`dmenu、dwm、st、slstatus`均可在freeBSD中使用，但需按照以下修改`config.mk`，以在freeBSD下编译。将X11INC和X11LIB路径中的`X11R6`改为`local`，安装`pkgconf`，`pkg install pkfconf`，将`PKG_CONFIG`中`pkg-config`改为`/usr/local/bin/pkgconf`。需使用github上LukeSmith修改的st，可以背景透明，显示systray和输入中文。
+`dmenu、dwm、st、slstatus`均可在freeBSD中使用，但需按照以下修改`config.mk`，以在freeBSD下编译。将X11INC和X11LIB路径中的`X11R6`改为`local`，把freetype2的路径改为`/usr/local/bin/`,安装`pkgconf`，`pkg install pkfconf`，将`PKG_CONFIG`中`pkg-config`改为`/usr/local/bin/pkgconf`。需使用github上LukeSmith修改的st，可以背景透明，显示systray和输入中文。
 ### 中文输入 
 
 安装`zh-fcitx`，使用`zh-fcitx-configtool`配置，但无法配置具体的输入法，直接使用linux下配置。配置文件位置为.config/fcitx。
@@ -67,7 +67,7 @@ xset fp+ /usr/local/share/font/wqy
 xset rehash
 ```
 ### 其他设置
-在`.xinitrc`中使用`picom`背景透明，`feh`设置壁纸，`slim`登录。
+在`.xinitrc`中使用`picom`设置背景透明，要把用户加入`video`组，`pw addgroup video -m 用户`，`feh`设置壁纸，`slim`登录。
 ## 声音设置
 
 ### 解决音量小问题
@@ -115,3 +115,13 @@ freebsd-update install
 ```
 pkg-static upgrade -f
 ```
+
+## chromium开启硬件加速
+
+### 开启flags
+- `chrome://flags/#ignore-gpu-blocklist`
+- `chrome://flags/#enable-accelerated-video-decode`
+### 安装vaapi驱动
+`sudo pkg install libva-intel-driver` 
+### 为不支持VP9显卡安装[h265ify](https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal)拓展
+### 启动浏览器使用`--use-gl=desktop`标志
