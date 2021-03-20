@@ -13,16 +13,34 @@ draft : true
 ### 配置中科大源
 中科大源可参考网站配置。
 ### 配置无线网络
-debian 默认使wpa_supplicant管理网络。iwd
+安装non-free驱动iwlwifi
+debian 默认ifup使
 
 /etc/network/interface.d
-
+ip a
 /etc/resove.conf
+
+
+
 
 ### 安装dwm
 - 安装xorg
-- 安装
-- 
+- 编译装dwm
+- 设置.xsessionrc
 
 ### 安装fcitx
-fcitx-bin fcitx-
+fcitx-bin fcitx-frontend-all
+
+### 开启vaapi 
+#### 编译驱动
+archlinux  intel-driver-g45-h264.tar.gz
+./configure
+libdrm-dev
+libva-dev
+sudo make clean install
+30-40 20
+#### 设置chromium
+chrome://flags
+acce
+gpu
+chrome://gpu
