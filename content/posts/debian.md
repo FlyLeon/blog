@@ -18,6 +18,7 @@ debian 默认ifup使
 
 /etc/network/interface.d
 ip a
+
 /etc/resove.conf
 
 
@@ -25,11 +26,15 @@ ip a
 
 ### 安装dwm
 - 安装xorg
-- 编译装dwm
+- 编译dwm
+  安装编译依赖libxft-dev libx11-dev libxinerama-dev 
 - 设置.xsessionrc
-
+  exec dwm
 ### 安装fcitx
 fcitx-bin fcitx-frontend-all
+字体安装.fonts中
+ubuntu nerd font 
+wqy
 
 ### 开启vaapi 
 #### 编译驱动
@@ -44,3 +49,14 @@ chrome://flags
 acce
 gpu
 chrome://gpu
+### 安装wps
+www.wps.com
+www.wps.cm
+mui目录
+字体安装
+### 声音驱动
+### 杂项
+   壁纸
+   feh
+   背景透明
+   comtpon
