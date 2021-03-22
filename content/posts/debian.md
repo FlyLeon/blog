@@ -15,11 +15,11 @@ draft : true
 ### 配置无线网络
 安装non-free驱动iwlwifi
 debian 默认ifup使
-
+sudo vim /etc/network/interfaces
 /etc/network/interface.d
 ip a
 
-/etc/resove.conf
+/etc/resolv.conf
 
 
 
@@ -29,7 +29,16 @@ ip a
 - 编译dwm
   安装编译依赖libxft-dev libx11-dev libxinerama-dev 
 - 设置.xsessionrc
-  exec dwm
+```
+export GTK_IM_MODULE="fcitx"
+export QT_IM_MODULE="fcitx"
+export XMODIFIERS="@im=fcitx"
+fcitx -r &
+redshift &
+feh --bg-fill ~/Downloads/sea-winter.jpg &
+compton
+exec dwm
+```
 ### 安装fcitx
 fcitx-bin fcitx-frontend-all
 字体安装.fonts中
