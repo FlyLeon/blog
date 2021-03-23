@@ -3,31 +3,44 @@ title: "Debian桌面使用安装配置"
 date: 2021-03-16T08:42:16+08:00
 categories : ["linux"]
 tags : ["debian"]
-draft : true
 ---
-> 笔记本一直使用archlinux，但有很长时间未更新，更新后挂了，于是想试试号称最稳定的debian。但网上如何桌面使用的文章很少。以下是我安装debian遇到的坑，简单记录。
+> 笔记本一直使用`archlinux`，但有很长时间未更新，更新后挂了，于是想试试号称最稳定的`debian`。但网上如何桌面使用的文章很少。以下是我安装debian遇到的坑，简单记录。
 
 ## 安装
-使用网络安装，网络一定要能科学上网环境。否则最后一步安装grub会失败，因为无法下载grub相关文件。安装中可手动设置网络，可先选择dhcp，到磁盘设置时返回选择网络配置。安装可选择中国，选择中科大(ustc)源。软件可只选择安装，因为我们会自己安装dwm。
+使用有线网络安装。网络一定要能科学上网环境。否则最后一步安装grub会失败，因为无法下载grub相关文件。安装中可手动设置网络，可先选择dhcp，到磁盘设置时返回选择网络配置。安装可选择中国，选择中科大(ustc)源。软件可只选择安装`standard system utilities`，因为我们会自己安装dwm。
 ## 安装后配置
 ### 配置中科大源
-中科大源可参考网站配置。
+中科大`non-free`源可参考其网站配置。
 ### 配置无线网络
-安装non-free驱动iwlwifi
-debian 默认ifup使
-sudo vim /etc/network/interfaces
-/etc/network/interface.d
-ip a
+`Intel Wireless`需要先安装`non-free`驱动。
+```
+sudo apt-get update 
+sudo apt-get install firmware-iwlwifi
+```
+debian 默认使用ifup设置。
+- 编辑`sudo vim /etc/network/interfaces`
+```
 
-/etc/resolv.conf
+allow-hotplug wlan0
+iface wlan0 inet static
+```
+- 编辑/etc/network/interface.d具体网络
+使用`ip a`查看可用网络名。编辑网络名文件。
+```
+address xxx.xxx.xxx.xxx/24
+gateway xxx.xxx.xxx.xxx
+DNS     xxx.xxx.xxx.xxx
+wpa-ssid your_ssid
+wpa-psk your_password
 
 
-
-
+```
+- 设置DNS
+编辑`sudo vim /etc/resolv.conf`。
 ### 安装dwm
 - 安装xorg
 - 编译dwm
-  安装编译依赖libxft-dev libx11-dev libxinerama-dev 
+  安装编译依赖`libxft-dev libx11-dev libxinerama-dev `，编译安装。
 - 设置.xsessionrc
 ```
 export GTK_IM_MODULE="fcitx"
@@ -40,32 +53,35 @@ compton
 exec dwm
 ```
 ### 安装fcitx
-fcitx-bin fcitx-frontend-all
-字体安装.fonts中
-ubuntu nerd font 
-wqy
-
+安装`fitcx-bin fcitx-frontend-all`。
+下载`ubuntu nerd font`，解压于~/.fonts。 
+下载`xfonts-wqy`
+更新字体`fv-cache -vf`
 ### 开启vaapi 
 #### 编译驱动
-archlinux  intel-driver-g45-h264.tar.gz
+使用archlinux的intel-driver-g45-h264.tar.gz解压编译。
 ./configure
-libdrm-dev
-libva-dev
+安装`libdrm-dev libva-dev`，进入解压目录。
+```
+./configure
 sudo make clean install
-30-40 20
+```
 #### 设置chromium
-chrome://flags
-acce
-gpu
-chrome://gpu
+- 设置chrome://flags
+`Hardware-accelerated video decode=enabled`
+- 设置gpu
+```
+GPU rasterization=enabled
+Zero-copy rasterizer=enabled
+```
+- 查看chrome://gpu
 ### 安装wps
-www.wps.com
-www.wps.cm
-mui目录
-字体安装
+- 下载`wps`
+分别于`www.wps.com`和`www.wps.cn`下载英文和中文wps安装包，安装英文版。
+- 解压中文`wps`
+- 复制中文`mui`目录
+- 中文字体安装
 ### 声音驱动
+分别安装`ALSA`和`pluse`驱动。
 ### 杂项
-   壁纸
-   feh
-   背景透明
-   comtpon
+使用`feh`设置壁纸使用`compon`背景透明。
