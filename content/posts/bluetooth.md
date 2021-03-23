@@ -5,4 +5,8 @@ categories : ["linux,windows,mac"]
 tags : [bluetooth"]
 draft: true
 ---
-sudo defaults read /private/var/root/Library/Preferences/com.apple.bluetoothd.plist LinkKeys > bt
+- 蓝牙耳机配对`windows`
+- 蓝牙耳机配对`MAC`
+`sudo defaults read /private/var/root/Library/Preferences/com.apple.bluetoothd.plist LinkKeys > bt`
+- 蓝牙耳机配对`linux`
+
