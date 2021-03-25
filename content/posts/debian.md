@@ -39,8 +39,13 @@ wpa-psk your_password
 编辑`sudo vim /etc/resolv.conf`。
 ### 安装dwm
 - 安装xorg
-- 编译dwm
-  安装编译依赖`libxft-dev libx11-dev libxinerama-dev `，编译安装。
+- 安装依赖 
+  安装`gcc make libxft-dev libx11-dev libxinerama-dev `。
+- 设置字体
+```
+static const char *fonts[] = { "Hack Nerd Font:size=12:weight=bold:
+ antialias=true:autohint:true","WenQuanYi Micro Hei Mono:size=12" };
+```
 - 设置.xsessionrc
 ```
 export GTK_IM_MODULE="fcitx"
@@ -55,8 +60,8 @@ exec dwm
 ### 安装fcitx
 安装`fitcx-bin fcitx-frontend-all`。
 下载`ubuntu nerd font`，解压于~/.fonts。 
-下载`xfonts-wqy`
-更新字体`fv-cache -vf`
+下载`font-wqy-microhei xfonts-wqy`
+更新字体`fc-cache -vf`
 ### 开启vaapi 
 #### 编译驱动
 使用archlinux的intel-driver-g45-h264.tar.gz解压编译。
@@ -82,6 +87,6 @@ Zero-copy rasterizer=enabled
 - 复制中文`mui`目录
 - 中文字体安装
 ### 声音驱动
-分别安装`ALSA`和`pluse`驱动。
+分别安装`ALSA`和`pluseaudio`驱动。
 ### 杂项
 使用`feh`设置壁纸使用`compon`背景透明。
