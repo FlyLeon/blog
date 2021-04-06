@@ -309,3 +309,15 @@ root用户'bash <(curl -L https://github.com/XTLS/Xray-install/raw/main/install-
 ```
 使用UUID`5049f982-68e5-02f7-e977-e335bf417966`
 注意不同协议使用不同路径
+# git 加速
+
+将github.com 换为github.com.cnpmjs.org即可实现加速
+
+# NetWorkManager下dnsmasq设置
+- /etc/NetWorkManager/conf.d
+vim 00-use-dnsmasq.conf
+[main]
+dns=dnsmasq
+- /etc/NetWorkManager/dnsmasq.d
+vim 02-add-hosts.conf
+addn-hosts=/etc/hosts
