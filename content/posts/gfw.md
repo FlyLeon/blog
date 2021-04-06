@@ -138,6 +138,7 @@ f1g1ns2.dnspod.net
 {"result":{"id":"9d6f1a4c7e2de89986478f1ed9c09428","status":"active"},"success":true,"errors":[],"messages":[{"code":10000,"message":"This API Token is valid and active","type":null}]}
 ```
 # xray
+## 安装
 root用户'bash <(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh) install'
 使用*VLESS over TCP with XTLS + 回落 & 分流 to WHATEVER（终极配置）*
 配置`/usr/local/etc/xray/config.json`。
@@ -309,6 +310,9 @@ root用户'bash <(curl -L https://github.com/XTLS/Xray-install/raw/main/install-
 ```
 使用UUID`5049f982-68e5-02f7-e977-e335bf417966`
 注意不同协议使用不同路径
+
+## 升级
+`bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install`
 # git 加速
 
 将github.com 换为github.com.cnpmjs.org即可实现加速
