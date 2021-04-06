@@ -321,3 +321,6 @@ dns=dnsmasq
 - /etc/NetWorkManager/dnsmasq.d
 vim 02-add-hosts.conf
 addn-hosts=/etc/hosts
+
+# 使用`mosh`进行`ssh`连接 
+`mosh --ssh='ssh -p xxxx' xxx@xxx.xxx.xxx.xxx` 
