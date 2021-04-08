@@ -17,4 +17,4 @@ tags : [bluetooth"]
 进入`cd /var/lib/bluetooth/你的蓝牙mac地址`，`vim info`。
 修改`LinkKey`下`key`。 
 
-参考·[Archlinux Wiki](https://wiki.archlinux.org/index.php/Bluetooth)
+参考[Archlinux Wiki](https://wiki.archlinux.org/index.php/Bluetooth)
