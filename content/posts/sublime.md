@@ -1,10 +1,12 @@
 ---
-title: "Sublime"
+title: "Sublime3注册码"
 date: 2021-03-16T13:08:25+08:00
-categories : ["linux"]
-tags : ["vps"]
+categories : ["软件"]
+tags : ["注册"]
 draft: true
 ---
+> 注册码
+
 ```
 ----- BEGIN LICENSE -----
 Member J2TeaM

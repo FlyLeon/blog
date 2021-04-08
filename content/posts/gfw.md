@@ -1,330 +1,191 @@
 ---
-title: "Gfw"
+title: "科学上网设置"
 date: 2020-12-28T16:35:59+08:00
 categories : ["linux"]
-tags : ["vps"]
+tags : ["翻墙"]
 draft: true
 ---
->ssl /usr/local/ssl/tiantian.crt tiantian.key
+> 如今国内互联网的墙越来越高，如何翻墙已成为上网的基本技能，所以多掌握几种翻墙技巧还是必要的。
 
-# ssl 证书
-# trojan
-`sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"`
-`/usr/local/etc/trojan/config.json`
+## 使用`v2raya`设置`trojan`
+### 服务器端设置
+#### 安装
 ```
-{
-    "run_type": "server",
-    "local_addr": "0.0.0.0",
-    "local_port": 443,
-    "remote_addr": "127.0.0.1",
-    "remote_port": 80,
-    "password": [
-        "password1",
-        "password2"
-    ],
-    "log_level": 1,
-    "ssl": {
-        "cert": "/path/to/certificate.crt",
-        "key": "/path/to/private.key",
-        "key_password": "",
-        "cipher": "ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384",
-        "cipher_tls13": "TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384",
-        "prefer_server_cipher": true,
-        "alpn": [
-            "http/1.1"
-        ],
-        "reuse_session": true,
-        "session_ticket": false,
-        "session_timeout": 600,
-        "plain_http_response": "",
-        "curves": "",
-        "dhparam": ""
-    },
-    "tcp": {
-        "prefer_ipv4": false,
-        "no_delay": true,
-        "keep_alive": true,
-        "reuse_port": false,
-        "fast_open": false,
-        "fast_open_qlen": 20
-    },
-    "mysql": {
-        "enabled": false,
-        "server_addr": "127.0.0.1",
-        "server_port": 3306,
-        "database": "trojan",
-        "username": "trojan",
-        "password": "",
-        "key": "",
-        "cert": "",
-        "ca": ""
-    }
-}
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
 ```
-# trojan-go 
+#### 设置
+编辑`/etc/trojan/config.json`。默认端口可以不用修改。
+- 设置`run_type`为`server`
+- 设置`password`
+- 设置证书
+  证书可参照[]()安装设置。
+### 客户端设置
+v2raya的设置很简单。
+- 安装
+`yay -S v2raya`。
+- 设置自启动
 ```
-wget https://github.com/p4gefau1t/trojan-go/releases/download/v0.5.1/trojan-go-linux-amd64.zip
-unzip -o trojan-go-linux-amd64.zip -d /usr/local/bin/trojan-go/trojan-go
-rm trojan-go-linux-amd64.zip
+sudo systemctl enable v2raya
+sudo systemctl start v2raya
 ```
-
-`vim /etc/systemd/system/trojan-go.service`
-
-```
-[Unit]
-Description=Trojan-Go
-After=network.target nss-lookup.target
-Wants=network-online.target
-
-[Service]
-Type=simple
-User=root
-ExecStart=/usr/local/bin/trojan-go/trojan-go -config /usr/local/etc/trojan-go/config.json
-Restart=on-failure
-RestartSec=15
-
-[Install]
-WantedBy=multi-user.target
-```
-
-`systemctl enable trojan-go`
-
-```
-mkdir -p /usr/local/etc/trojan-go
-vim /usr/local/etc/trojan-go/config.json
-```
-
-```
-{
-    "run_type": "server",
-    "local_addr": "0.0.0.0",
-    "local_port": 443,
-    "remote_addr": "127.0.0.1",
-    "remote_port": 80,
-    "password": [
-        "fuckgfw"
-    ],
-    "ssl": {
-        "cert": "/etc/ssl/certs/example.com.cer",
-        "key": "/etc/ssl/certs/example.com.key",
-        "sni": "example.com"
-    },
-    "router":{
-        "enabled": true,
-        "block": [
-            "geoip:private"
-        ]
-    }
-}
-```
-`./trojan-go -config config.json`
-# Cloudflare 设置
-将域名的 Namesever 指向 Cloudflare 所提供的地址，等待生效
-NS 记录更新后，将 Cloudflare 中域名的 A 记录指向服务器 IP，确保云朵为橙色（Proxied）
-在 SSL/TLS 版块中的 Overview 里，将加密模式调整为 Full (strict)
-在 SSL/TLS 版块中的 Edge Certificates 里，将 Minimum TLS Version 调整为 TLS 1.3，并在下方确保开启对 TLS 1.3 的支持
-在 Firewall 版块中的 Firewall Rules 里，添加一个规则，允许 /random 路径的访问（Allow URI path）
-在 Cloudflare 上获取域名的 Zone ID，记录之
-在 Cloudflare 的 My Profile 中生成一个 API Token，权限为 Zone Zone Read 和 Zone DNS Edit，Zone Resources 特指区域为 example.com，完成后记下 Token
-根据自己的需要在 Cloudflare 上进行其他设置（可选），例如配置 Always Use HTTPS、HSTS、Automatic HTTPS Rewrites、Auto Minify 等等，主要影响浏览器访问网站的效果
-```
-f1g1ns1.dnspod.net
-
-f1g1ns2.dnspod.net
-```
-`d6f39e137d9e8e7355274680ed1e962e`
-
-```
-{"result":{"id":"9d6f1a4c7e2de89986478f1ed9c09428","status":"active"},"success":true,"errors":[],"messages":[{"code":10000,"message":"This API Token is valid and active","type":null}]}
-```
-# xray
-## 安装
-root用户'bash <(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh) install'
-使用*VLESS over TCP with XTLS + 回落 & 分流 to WHATEVER（终极配置）*
-配置`/usr/local/etc/xray/config.json`。
-
+- 设置
+使用浏览器打开`localhost:2017`进行设置。
+- 添加`server`，选择类型为`trojan`。
+- 连接
+## 使用`heroku`
+这里我们可以参照`github`项目[xrayku](https://github.com/mixool/xrayku)设置。
+## 使用`xray`
+### 安装
+root用户`bash <(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh) install`
+### 配置
+配置`/usr/local/etc/xray/config.json`，将其中`xxx`部分改为你自己的，`uuid`可以使用`xray uuid`生成。
 ```
 {
     "log": {
-        "loglevel": "warning"
+        "loglevel": "warning"         
     },
-    "inbounds": [
-        {
-            "port": 443,
-            "protocol": "vless",
-            "settings": {
-                "clients": [
+        "routing": {
+                    "domainStrategy": "AsIs",
+                    "rules": [
                     {
-                        "id": "", // 填写你的 UUID
-                        "flow": "xtls-rprx-direct",
-                        "level": 0,
-                        "email": "love@example.com"
+                     "type": "field",
+                     "domain": [
+                     "geosite:category-ads-all"
+                                        ],
+                     "outboundTag": "block"
+                    },
+                    {
+                      "type": "field",
+                      "domain": [
+                      "geosite:cn"
+                               ],
+                      "outboundTag": "direct"
+                    },
+                    {
+                       "type": "field",
+                       "ip": [
+                              "geoip:cn",
+                              "geoip:private"
+                             ],
+                       "outboundTag": "direct"
+                    },
+                    {
+                        "type": "field",
+                        "domain": [
+                         "geosite:geolocation-!cn"
+                                        ],
+                        "outboundTag": "proxy"
                     }
-                ],
-                "decryption": "none",
-                "fallbacks": [
-                    {
-                        "dest": 1310, // 默认回落到 Xray 的 Trojan 协议
-                        "xver": 1
-                    },
-                    {
-                        "path": "/websocket", // 必须换成自定义的 PATH
-                        "dest": 1234,
-                        "xver": 1
-                    },
-                    {
-                        "path": "/vmesstcp", // 必须换成自定义的 PATH
-                        "dest": 2345,
-                        "xver": 1
-                    },
-                    {
-                        "path": "/vmessws", // 必须换成自定义的 PATH
-                        "dest": 3456,
-                        "xver": 1
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "tcp",
-                "security": "xtls",
-                "xtlsSettings": {
-                    "alpn": [
-                        "http/1.1"
-                    ],
-                    "certificates": [
-                        {
-                            "certificateFile": "/path/to/fullchain.crt", // 换成你的证书，绝对路径
-                            "keyFile": "/path/to/private.key" // 换成你的私钥，绝对路径
-                        }
                     ]
-                }
-            }
+        },
+        "inbounds": [
+        {
+                       "tag": "socks-in",
+                       "protocol": "socks",
+                       "listen": "127.0.0.1", 
+                       "port": 10800,     
+                       "settings": {
+                       "udp": true
+                         }
         },
         {
-            "port": 1310,
-            "listen": "127.0.0.1",
-            "protocol": "trojan",
-            "settings": {
-                "clients": [
-                    {
-                        "password": "", // 填写你的密码
-                        "level": 0,
-                        "email": "love@example.com"
-                    }
-                ],
-                "fallbacks": [
-                    {
-                        "dest": 80 // 或者回落到其它也防探测的代理
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "tcp",
-                "security": "none",
-                "tcpSettings": {
-                    "acceptProxyProtocol": true
-                }
-            }
+                       "tag": "http-in",
+                       "protocol": "http",
+                       "listen": "127.0.0.1",  
+                       "port": 10801
         },
         {
-            "port": 1234,
-            "listen": "127.0.0.1",
-            "protocol": "vless",
-            "settings": {
-                "clients": [
-                    {
-                        "id": "", // 填写你的 UUID
-                        "level": 0,
-                        "email": "love@example.com"
-                    }
-                ],
-                "decryption": "none"
-            },
-            "streamSettings": {
-                "network": "ws",
-                "security": "none",
-                "wsSettings": {
-                    "acceptProxyProtocol": true, // 提醒：若你用 Nginx/Caddy 等反代 WS，需要删掉这行
-                    "path": "/websocket" // 必须换成自定义的 PATH，需要和分流的一致
-                }
-            }
+                       "tag": "gproxy-in",
+                       "listen": "127.0.0.1",
+                       "port": 1082,
+                        "protocol": "dokodemo-door",
+                        "settings": {
+                           "followRedirect": true,
+                            "network": "tcp,udp"
+                      },
+                        "sniffing": {
+                           "destOverride": [
+                           "http",
+                            "tls"
+                          ],
+                        "enabled": true,
+                      "streamSettings": {
+                        "sockopt": {
+                           "tproxy": "tproxy"
+                          }
+                      }
+                  }
+              }
+        ],
+        "outbounds": [
+        {
+                       "tag": "proxy",
+                       "protocol": "vless",
+                       "settings": {
+                       "vnext": [
+                                   {
+                                       "address": "xxx.xxx.xxx",
+                                       "port": 443,
+                                       "users": [
+                                                    {
+                                                      "id": "xxx", 
+                                                      "flow": "xtls-rprx-direct",
+                                                      "encryption": "none",
+                                                      "level": 0
+                                                    }
+                                               ]
+                                      }
+                                   ]
+                                },
+                        "streamSettings": {
+                                          "network": "tcp",
+                                          "security": "xtls",
+                                          "xtlsSettings": {
+                                          "serverName": "git.tiantian.cool", 
+                                          "allowInsecure":false 
+                                         }
+                                    }
         },
         {
-            "port": 2345,
-            "listen": "127.0.0.1",
-            "protocol": "vmess",
-            "settings": {
-                "clients": [
-                    {
-                        "id": "", // 填写你的 UUID
-                        "level": 0,
-                        "email": "love@example.com"
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "tcp",
-                "security": "none",
-                "tcpSettings": {
-                    "acceptProxyProtocol": true,
-                    "header": {
-                        "type": "http",
-                        "request": {
-                            "path": [
-                                "/vmesstcp" // 必须换成自定义的 PATH，需要和分流的一致
-                            ]
-                        }
-                    }
-                }
-            }
+                        "tag": "direct",
+                                   "protocol": "freedom"
         },
         {
-            "port": 3456,
-            "listen": "127.0.0.1",
-            "protocol": "vmess",
-            "settings": {
-                "clients": [
-                    {
-                        "id": "", // 填写你的 UUID
-                        "level": 0,
-                        "email": "love@example.com"
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "ws",
-                "security": "none",
-                "wsSettings": {
-                    "acceptProxyProtocol": true, // 提醒：若你用 Nginx/Caddy 等反代 WS，需要删掉这行
-                    "path": "/vmessws" // 必须换成自定义的 PATH，需要和分流的一致
-                }
-            }
+                        "tag": "block",
+                                   "protocol": "blackhole"
         }
-    ],
-    "outbounds": [
-        {
-            "protocol": "freedom"
-        }
-    ]
+        ]    
 }
 ```
-使用UUID`5049f982-68e5-02f7-e977-e335bf417966`
-注意不同协议使用不同路径
-
-## 升级
+### 升级
 `bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install`
-# git 加速
-
-将github.com 换为github.com.cnpmjs.org即可实现加速
-
+### git加速
+- 将`github.com`换为`github.com.cnpmjs.org`即可实现加速
+- `ghproxy`
+下载地址前添加`ghproxy.com`。
 # NetWorkManager下dnsmasq设置
-- /etc/NetWorkManager/conf.d
-vim 00-use-dnsmasq.conf
+-  进入/etc/NetWorkManager/conf.d
+编辑`vim 00-use-dnsmasq.conf`
+```
 [main]
 dns=dnsmasq
 - /etc/NetWorkManager/dnsmasq.d
-vim 02-add-hosts.conf
-addn-hosts=/etc/hosts
+```
+编辑`vim 02-add-hosts.conf`
+`addn-hosts=/etc/hosts`
+# 使用mosh
+- 连接 
+`mosh --ssh='ssh -p xxxx' xxx@xxx.xxx.xxx.xxx`
+- 开启防火墙
+```
+sudo ufw enable udp 60001
+sudo ufw enable udp 60003
+sudo ufw enable udp 60003
+sudo ufw enable udp 60004
+sudo ufw enable udp 60005
+``` 
+### nginx不同翻墙软件共用443端口
+编辑 `/etc/nginx/nginx.conf`
+```
 
-# 使用`mosh`进行`ssh`连接 
-`mosh --ssh='ssh -p xxxx' xxx@xxx.xxx.xxx.xxx` 
+```
