@@ -225,3 +225,14 @@ http {
   # 这块保持不变即可
 }
 ```
+### vim关闭自动缩进
+- 开启`paste`模式
+`set paste`
+- 关闭`paste`模式
+`ser nopaste`
+- 在`.vinrc`中设置
+```
+"Paste toggle - when pasting something in, don't indent.
+set pastetoggle=<F3>"
+```
+这样就可以用F3来切换了。
