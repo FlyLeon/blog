@@ -187,41 +187,5 @@ sudo ufw enable udp 60005
 ### nginx不同翻墙软件共用443端口
 编辑 `/etc/nginx/nginx.conf`
 ```
-stream {
-    # 这里就是 SNI 识别，将域名映射成一个配置名
-    map $ssl_preread_server_name $backend_name {
-        aaa.xxx.xxx web;
-        bbb.xxx.xxx vmess;
-        ccc.xxx.xxx trojan;
-    # 域名都不匹配情况下的默认值
-        default web;
-    }
 
-    # web，配置转发详情
-    upstream web {
-        server 127.0.0.1:10240;
-    }
-
-    # trojan，配置转发详情
-    upstream trojan {
-        server 127.0.0.1:10241;
-    }
-
-    # vmess，配置转发详情
-    upstream vmess {
-        server 127.0.0.1:10242;
-    }
-
-    # 监听 443 并开启 ssl_preread
-    server {
-        listen 443 reuseport;
-        listen [::]:443 reuseport;
-        proxy_pass  $backend_name;
-        ssl_preread on;
-    }
-}
-
-http {
-  # 这块保持不变即可
-}
 ```
