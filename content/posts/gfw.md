@@ -236,3 +236,7 @@ http {
 set pastetoggle=<F3>"
 ```
 这样就可以用F3来切换了。
+
+### kakoune无缩进粘贴
+
+按`\i`
