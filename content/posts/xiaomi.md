@@ -18,16 +18,22 @@ draft: true
 
 ## 自签名程序
 
-### 安装签名程序
+- 安装签名程序
 ```
 yay -S jdk-openjdk
 ```
 下载[Uber Apk Signer](https://github.com/patrickfav/uber-apk-signer)。
-### 去掉原有签名
+- 去掉原有签名
 
 其实很简单，用WinRAR打开apk，找到META-INF文件夹，删除MANIFEST.MF之外的所有其他文件即可。
-### 自签名
+
+- 生成自己的证书
 ```
-java -jar uber-apk-signer-1.2.1.jar --apks xxx.apk
-``` 
+keytool -genkey -v -keystore ~/.config/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias xxx
+keytool -importkeystore -srckeystore /home/leon/.config/key.jks -destkeystore /home/leon/.config/key.jks -deststoretype pkcs12
+```
+- 自签名
+```
+java -jar uber-apk-signer-1.2.1.jar --apks xxx.apk --ks ~/.config/key.jks
+```
 
