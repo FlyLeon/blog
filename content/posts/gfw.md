@@ -240,3 +240,6 @@ set pastetoggle=<F3>"
 ### kakoune无缩进粘贴
 
 按`\i`
+## 透明代理
+
+按照[透明代理（TProxy）配置教程](https://xtls.github.io/documents/level-2/tproxy/)配置，注意将`xray`设置文件`config.json`中相关内容改成自己的，要给`nftables.conf`设置可执行权限。
