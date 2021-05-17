@@ -243,3 +243,13 @@ set pastetoggle=<F3>"
 ## 透明代理
 
 按照[透明代理（TProxy）配置教程](https://xtls.github.io/documents/level-2/tproxy/)配置，注意将`xray`设置文件`config.json`中相关内容改成自己的，要给`nftables.conf`设置可执行权限。
+
+## jar证书
+- 删除已有证书
+
+ 解压jar文件，删除`META-INF`中内容。
+- 生成证书
+ ` keytool -genkey -alias xxx  -keyalg RSA  -storepass xxx -keystore xxx  -keypass xxx`
+- 自签名
+` java -jar uber-apk-signer-1.2.1.jar -a xxx.apk --ks xxx  --ksAlias xxx`
+
