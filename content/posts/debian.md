@@ -58,8 +58,8 @@ compton
 exec dwm
 ```
 ### 安装fcitx
-安装`fitcx-bin fcitx-frontend-all`。
-下载`ubuntu nerd font`，解压于~/.fonts。 
+安装`fitcx fcitx-frontend-all`。
+下载`hack nerd font`，解压于~/.fonts。 
 下载`font-wqy-microhei xfonts-wqy`
 更新字体`fc-cache -vf`
 ### 开启vaapi 
@@ -83,9 +83,9 @@ Zero-copy rasterizer=enabled
 ### 安装wps
 - 下载`wps`
 分别于`www.wps.com`和`www.wps.cn`下载英文和中文wps安装包，安装英文版。
-- 解压中文`wps`
-- 复制中文`mui`目录
-- 中文字体安装
+- 解压中文`wps`,`dpkg -X wps.tar.gz wps`
+- 复制`opt`下中文`mui`目录
+- `wps`字体安装
 ### 声音驱动
 分别安装`ALSA`和`pluseaudio`驱动。
 ### 杂项
