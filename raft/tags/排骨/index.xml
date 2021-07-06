@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>排骨 - 标签 - 我的自留地</title>
+        <link>http://localhost:1313/tags/%E6%8E%92%E9%AA%A8/</link>
+        <description>排骨 - 标签 - 我的自留地</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 09 Dec 2020 14:39:17 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%8E%92%E9%AA%A8/" rel="self" type="application/rss+xml" /><item>
+    <title>美味的菜（二）</title>
+    <link>http://localhost:1313/food-2/</link>
+    <pubDate>Wed, 09 Dec 2020 14:39:17 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/food-2/</guid>
+    <description><![CDATA[感觉还是不错的。 糖醋排骨 食材 排骨、葱、姜、桂皮、4个八角 调料 料酒、冰糖、糖、生抽、醋 步骤 排骨浸泡冷水30分钟以上，泡出血水。 少许水，小火炒糖]]></description>
+</item></channel>
+</rss>

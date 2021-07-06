@@ -1,0 +1,35 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>wayland - 标签 - 我的自留地</title>
+        <link>http://localhost:1313/tags/wayland/</link>
+        <description>wayland - 标签 - 我的自留地</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 11 Nov 2020 11:27:19 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/wayland/" rel="self" type="application/rss+xml" /><item>
+    <title>wayland使用redshift护眼程序</title>
+    <link>http://localhost:1313/redshift/</link>
+    <pubDate>Wed, 11 Nov 2020 11:27:19 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/redshift/</guid>
+    <description><![CDATA[redshift是linux护眼软件，可以根据你的地理位置，随时间自动调节屏幕屏幕色温，减少蓝光伤害，达到护眼目的。 安装redshift-w]]></description>
+</item><item>
+    <title>wayland下urxvt使用</title>
+    <link>http://localhost:1313/urxvt/</link>
+    <pubDate>Tue, 10 Nov 2020 16:02:38 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/urxvt/</guid>
+    <description><![CDATA[urxvt小巧快速，但缺乏缺省设置，设置起来比较麻烦，但设置好了，还是很好用的，而且只有它通过xwayland使用w3m支持ranger在w]]></description>
+</item><item>
+    <title>wanland下使用Fcitx输入中文</title>
+    <link>http://localhost:1313/fcitx/</link>
+    <pubDate>Tue, 10 Nov 2020 14:32:27 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/fcitx/</guid>
+    <description><![CDATA[fcitx是linux下常用的输入法，如何在wayland下使用，网上却缺乏准确的说法。实际上，fcitx在wayland下还是可以使用的，]]></description>
+</item><item>
+    <title>使用Wayland和sway</title>
+    <link>http://localhost:1313/wayland/</link>
+    <pubDate>Thu, 29 Oct 2020 12:33:02 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/wayland/</guid>
+    <description><![CDATA[根据维基百科，Wayland是一个通信协议，规定了显示服务器与其客户机之间的通信方式，而使用这个协议的显示服务器称为Wayland Compo]]></description>
+</item></channel>
+</rss>

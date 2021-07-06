@@ -1,0 +1,35 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>社会 - 分类 - 我的自留地</title>
+        <link>http://localhost:1313/categories/%E7%A4%BE%E4%BC%9A/</link>
+        <description>社会 - 分类 - 我的自留地</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 06 Jul 2021 08:38:12 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%A4%BE%E4%BC%9A/" rel="self" type="application/rss+xml" /><item>
+    <title>声音：《邓晓芒--苏格拉底与孔子的言说方式比较》</title>
+    <link>http://localhost:1313/suge/</link>
+    <pubDate>Tue, 06 Jul 2021 08:38:12 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/suge/</guid>
+    <description><![CDATA[[内容提要] 本文通过对古希腊苏格拉底的对话与孔子的《论语》在言说方式(logos)上的比较，证明苏格拉底的对话把言说标准确立于言说本身，具有]]></description>
+</item><item>
+    <title>声音：《杨小凯——后发劣势》</title>
+    <link>http://localhost:1313/houfayoushi/</link>
+    <pubDate>Wed, 07 Apr 2021 13:09:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/houfayoushi/</guid>
+    <description><![CDATA[今天讲的题目是“后发劣势”，这个题目也许不太适合很多人的口味，因为现在国内都在讲“后发优势”。我讲的后发劣势在西方研究的人也不多，有一位过世]]></description>
+</item><item>
+    <title>声音:《安·兰德专栏集粹——什么是客观主义》</title>
+    <link>http://localhost:1313/objectivism/</link>
+    <pubDate>Wed, 07 Apr 2021 12:50:44 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/objectivism/</guid>
+    <description><![CDATA[1962年6月17日 在《地球的震栗》出版前，兰登书屋为该书举行了一次推介会，会上有一个书商问我是否可以单脚站立总结一下我的主要哲学思想。我满]]></description>
+</item><item>
+    <title>声音:《安·兰德专栏集粹——关于美国主义的问答》</title>
+    <link>http://localhost:1313/about-american/</link>
+    <pubDate>Wed, 07 Apr 2021 12:42:18 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/about-american/</guid>
+    <description><![CDATA[本文1946年原载于加利福尼亚州贝弗利希尔斯市一份以保护美国理想为宗旨的电影协会刊物《警戒》。文章的目的在于定义和阐明政治领域的基本原理，所]]></description>
+</item></channel>
+</rss>

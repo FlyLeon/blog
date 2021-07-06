@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Thinkpad T400上安装配置Freebsd 12 - 我的自留地</title><meta name="Description" content="我的自留地"><meta property="og:title" content="Thinkpad T400上安装配置Freebsd 12" />
+<meta property="og:description" content="最近把一台T400的操作系统从Archlinux换成freeBSD，发现freeBSD更稳定，资源占用也更低。可能是使用人少的缘故，网上中文" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/freebsd/" /><meta property="og:image" content="http://localhost:1313/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-24T11:47:40&#43;08:00" />
+<meta property="article:modified_time" content="2021-02-24T11:47:40&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/logo.png"/>
+
+<meta name="twitter:title" content="Thinkpad T400上安装配置Freebsd 12"/>
+<meta name="twitter:description" content="最近把一台T400的操作系统从Archlinux换成freeBSD，发现freeBSD更稳定，资源占用也更低。可能是使用人少的缘故，网上中文"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/freebsd/" /><link rel="prev" href="http://localhost:1313/wm/" /><link rel="next" href="http://localhost:1313/debian/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Thinkpad T400上安装配置Freebsd 12",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/freebsd\/"
+        },"genre": "posts","keywords": "freebsd","wordcount":  1313 ,
+        "url": "http:\/\/localhost:1313\/freebsd\/","datePublished": "2021-02-24T11:47:40+08:00","dateModified": "2021-02-24T11:47:40+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "flyleon"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="我的自留地"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/kiss-wink-heart-regular.svg"
+        data-srcset="/images/kiss-wink-heart-regular.svg, /images/kiss-wink-heart-regular.svg 1.5x, /images/kiss-wink-heart-regular.svg 2x"
+        data-sizes="auto"
+        alt="/images/kiss-wink-heart-regular.svg"
+        title="/images/kiss-wink-heart-regular.svg" />FlyLeon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="https://github.com/FlyLeon/flyleon.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/about/" title="关于"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="我的自留地"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/kiss-wink-heart-regular.svg"
+        data-srcset="/images/kiss-wink-heart-regular.svg, /images/kiss-wink-heart-regular.svg 1.5x, /images/kiss-wink-heart-regular.svg 2x"
+        data-sizes="auto"
+        alt="/images/kiss-wink-heart-regular.svg"
+        title="/images/kiss-wink-heart-regular.svg" />FlyLeon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="https://github.com/FlyLeon/flyleon.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/about/" title="关于">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Thinkpad T400上安装配置Freebsd 12</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>flyleon</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/freebsd/"><i class="far fa-folder fa-fw"></i>freebsd</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-24">2021-02-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1313 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装">安装</a>
+      <ul>
+        <li><a href="#安装iso选择">安装iso选择</a></li>
+        <li><a href="#网络配置">网络配置</a></li>
+        <li><a href="#使用国内源">使用国内源</a>
+          <ul>
+            <li><a href="#更换pkg源">更换pkg源</a></li>
+            <li><a href="#更换update源">更换update源</a></li>
+            <li><a href="#freebsd国内源">freeBSD国内源</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#桌面配置">桌面配置</a>
+      <ul>
+        <li><a href="#编译使用suckless软件">编译使用suckless软件</a></li>
+        <li><a href="#中文输入">中文输入</a></li>
+        <li><a href="#字体">字体</a></li>
+        <li><a href="#其他设置">其他设置</a></li>
+      </ul>
+    </li>
+    <li><a href="#声音设置">声音设置</a>
+      <ul>
+        <li><a href="#解决音量小问题">解决音量小问题</a></li>
+        <li><a href="#设置51声音">设置5.1声音</a></li>
+        <li><a href="#设置音量调节按键">设置音量调节按键</a></li>
+        <li><a href="#输出自动切换">输出自动切换</a></li>
+      </ul>
+    </li>
+    <li><a href="#升级">升级</a>
+      <ul>
+        <li><a href="#更新到最新补丁版本">更新到最新补丁版本</a></li>
+        <li><a href="#升级版本">升级版本</a></li>
+        <li><a href="#重新引导到新内核并继续安装">重新引导到新内核并继续安装.</a></li>
+        <li><a href="#重新构建pkg程序完成升级">重新构建pkg程序，完成升级</a></li>
+      </ul>
+    </li>
+    <li><a href="#chromium开启硬件加速">chromium开启硬件加速</a>
+      <ul>
+        <li><a href="#开启flags">开启flags</a></li>
+        <li><a href="#安装vaapi驱动">安装vaapi驱动</a></li>
+        <li><a href="#为不支持vp9显卡安装h265ifyhttpschromegooglecomwebstoredetailh264ifyaleakchihdccplidncghkekgioiakgal拓展">为不支持VP9显卡安装<a href="https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal">h265ify</a>拓展</a></li>
+        <li><a href="#启动浏览器使用--use-gldesktop标志">启动浏览器使用<code>--use-gl=desktop</code>标志</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>最近把一台T400的操作系统从Archlinux换成freeBSD，发现freeBSD更稳定，资源占用也更低。可能是使用人少的缘故，网上中文资源很少，也不准确。好在英文资料还不少，也很详细，参照安装也不难。下面简要记录自己走过的弯路，下面命令均需root权限。</p>
+</blockquote>
+<h2 id="安装">安装</h2>
+<h3 id="安装iso选择">安装iso选择</h3>
+<p>由于众所周知的原因，境外freebsd源速度极慢，使用bootonly.iso基本无法安装。我下载使用下载amd64-dvd1.iso来安装，安装过程中无需上网下载。</p>
+<h3 id="网络配置">网络配置</h3>
+<p>安装完成可配置网络，可以选择配置ipv4、dhcp或手动配置ip。</p>
+<h3 id="使用国内源">使用国内源</h3>
+<h4 id="更换pkg源">更换pkg源</h4>
+<ul>
+<li>编辑/usr/local/etc/pkg/repos/FreeBSD.conf</li>
+</ul>
+<p>禁用系统级 pkg 源。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir -p /usr/local/etc/pkg/repos
+</code></pre></td></tr></table>
+</div>
+</div><p>替换其中url为<code>pkg+http://mirrors.ustc.edu.cn/freebsd-pkg/${ABI}/latest</code></p>
+<p>-禁用系统级 pkg 源</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mv /etc/pkg/FreeBSD.conf /etc/pkg/FreeBSD.conf.back
+pkg update -f
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="更换update源">更换update源</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sed -i &#39;&#39; &#39;s/ServerName update.FreeBSD.org/ServerName update.freebsd.cn/g&#39; /etc/freebsd-update.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>FreeBSD 安全补丁可以通过以下命令下载并安装补丁。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">freebsd-update fetch
+freebsd-update install #安装更新
+pkg audit -F  #查找所有软件包是否有漏洞补丁（安全审计）
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="freebsd国内源">freeBSD国内源</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ports mirror at ports.freebsd.cn
+
+portsnap mirror at portsnap.freebsd.cn
+
+update mirror at update.freebsd.cn
+
+pkg mirror at pkg.freebsd.cn
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="桌面配置">桌面配置</h2>
+<p>参照<a href="https://www.c0ffee.net/blog/freebsd-on-a-laptop/" target="_blank" rel="noopener noreffer">FreeBSD on a Laptop</a></p>
+<h3 id="编译使用suckless软件">编译使用suckless软件</h3>
+<p><code>dmenu、dwm、st、slstatus</code>均可在freeBSD中使用，但需按照以下修改<code>config.mk</code>，以在freeBSD下编译。将X11INC和X11LIB路径中的<code>X11R6</code>改为<code>local</code>，把freetype2的路径改为<code>/usr/local/bin/</code>,安装<code>pkgconf</code>，<code>pkg install pkfconf</code>，将<code>PKG_CONFIG</code>中<code>pkg-config</code>改为<code>/usr/local/bin/pkgconf</code>。需使用github上LukeSmith修改的st，可以背景透明，显示systray和输入中文。</p>
+<h3 id="中文输入">中文输入</h3>
+<p>安装<code>zh-fcitx</code>，使用<code>zh-fcitx-configtool</code>配置，但无法配置具体的输入法，直接使用linux下配置。配置文件位置为.config/fcitx。</p>
+<h3 id="字体">字体</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pkg install wqy-fonts nerd-font
+xset fp+ /usr/local/share/font/wqy
+xset rehash
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="其他设置">其他设置</h3>
+<p>在<code>.xinitrc</code>中使用<code>picom</code>设置背景透明，要把用户加入<code>video</code>组，<code>pw addgroup video -m 用户</code>，<code>feh</code>设置壁纸，<code>slim</code>登录。</p>
+<h2 id="声音设置">声音设置</h2>
+<h3 id="解决音量小问题">解决音量小问题</h3>
+<p>安装<code>mixer</code>调整音量，安装<code>sndio</code>改善音质。
+<code>mixer</code> 显示各设备音量，<code>mixer -s vol 100</code>设置音量为<code>100</code>。</p>
+<h3 id="设置51声音">设置5.1声音</h3>
+<p>编辑<code>/etc/sysctl.conf</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">dev.pcm.0.play.vchanformat=s16le:5.1
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="设置音量调节按键">设置音量调节按键</h3>
+<p>修改dwm的<code>config.h</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">{0, XF86XK_AudioLowerVolume, spawn, SHCMD(&#34;mixer vol -5&#34;)},
+{0, XF86XK_AudioRaiseVolume, spawn, SHCMD(&#34;mixer vol +5 &#34;)},
+{0, XF86XK_AudioMute, spawn, SHCMD(&#34;mixer -s 0&#34;)},
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="输出自动切换">输出自动切换</h3>
+<p>编辑`/etc/sysctl.conf</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">hw.snd.degault_auto=2
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="升级">升级</h2>
+<p>使用freebsd-update升级FreeBSD操作系统使用freebsd-update升级FreeBSD操作系统。</p>
+<h3 id="更新到最新补丁版本">更新到最新补丁版本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">freebsd-update fetch
+freebsd-update install
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="升级版本">升级版本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">freebsd-update upgrade -r 13.0-BETA3
+freebsd-update install
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="重新引导到新内核并继续安装">重新引导到新内核并继续安装.</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">reboot
+freebsd-update install
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="重新构建pkg程序完成升级">重新构建pkg程序，完成升级</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pkg-static upgrade -f
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="chromium开启硬件加速">chromium开启硬件加速</h2>
+<h3 id="开启flags">开启flags</h3>
+<ul>
+<li><code>chrome://flags/#ignore-gpu-blocklist</code></li>
+<li><code>chrome://flags/#enable-accelerated-video-decode</code></li>
+</ul>
+<h3 id="安装vaapi驱动">安装vaapi驱动</h3>
+<p><code>sudo pkg install libva-intel-driver</code></p>
+<h3 id="为不支持vp9显卡安装h265ifyhttpschromegooglecomwebstoredetailh264ifyaleakchihdccplidncghkekgioiakgal拓展">为不支持VP9显卡安装<a href="https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal" target="_blank" rel="noopener noreffer">h265ify</a>拓展</h3>
+<h3 id="启动浏览器使用--use-gldesktop标志">启动浏览器使用<code>--use-gl=desktop</code>标志</h3>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-02-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/freebsd/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/freebsd/" data-title="Thinkpad T400上安装配置Freebsd 12" data-via="xxxx" data-hashtags="freebsd"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/freebsd/" data-hashtag="freebsd"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/freebsd/" data-title="Thinkpad T400上安装配置Freebsd 12" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/freebsd/" data-title="Thinkpad T400上安装配置Freebsd 12"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/freebsd/" data-title="Thinkpad T400上安装配置Freebsd 12"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://localhost:1313/freebsd/" data-title="Thinkpad T400上安装配置Freebsd 12" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/freebsd/" data-title="Thinkpad T400上安装配置Freebsd 12" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/freebsd/" data-title="Thinkpad T400上安装配置Freebsd 12"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/freebsd/">freebsd</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/wm/" class="prev" rel="prev" title="Archlinux设置窗口管理器(wm)"><i class="fas fa-angle-left fa-fw"></i>Archlinux设置窗口管理器(wm)</a>
+            <a href="/debian/" class="next" rel="next" title="Debian桌面使用安装配置">Debian桌面使用安装配置<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.83.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">flyleon</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

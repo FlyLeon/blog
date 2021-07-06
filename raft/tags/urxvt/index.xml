@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>urxvt - 标签 - 我的自留地</title>
+        <link>http://localhost:1313/tags/urxvt/</link>
+        <description>urxvt - 标签 - 我的自留地</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 10 Nov 2020 16:02:38 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/urxvt/" rel="self" type="application/rss+xml" /><item>
+    <title>wayland下urxvt使用</title>
+    <link>http://localhost:1313/urxvt/</link>
+    <pubDate>Tue, 10 Nov 2020 16:02:38 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/urxvt/</guid>
+    <description><![CDATA[urxvt小巧快速，但缺乏缺省设置，设置起来比较麻烦，但设置好了，还是很好用的，而且只有它通过xwayland使用w3m支持ranger在w]]></description>
+</item></channel>
+</rss>

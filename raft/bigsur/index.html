@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>黑苹果Thinkpad X1 7th carbon安装Big Sur - 我的自留地</title><meta name="Description" content="我的自留地"><meta property="og:title" content="黑苹果Thinkpad X1 7th carbon安装Big Sur" />
+<meta property="og:description" content="我的笔记本电脑是Thinkpad X1 7th carbon，使用EFI启动，同时安装了windiws10，Big Sur和archlinux三套系统。其" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/bigsur/" /><meta property="og:image" content="http://localhost:1313/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-18T15:48:55&#43;08:00" />
+<meta property="article:modified_time" content="2020-11-18T15:48:55&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/logo.png"/>
+
+<meta name="twitter:title" content="黑苹果Thinkpad X1 7th carbon安装Big Sur"/>
+<meta name="twitter:description" content="我的笔记本电脑是Thinkpad X1 7th carbon，使用EFI启动，同时安装了windiws10，Big Sur和archlinux三套系统。其"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/bigsur/" /><link rel="prev" href="http://localhost:1313/redshift/" /><link rel="next" href="http://localhost:1313/food-1/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "黑苹果Thinkpad X1 7th carbon安装Big Sur",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/bigsur\/"
+        },"genre": "posts","keywords": "bigsur","wordcount":  515 ,
+        "url": "http:\/\/localhost:1313\/bigsur\/","datePublished": "2020-11-18T15:48:55+08:00","dateModified": "2020-11-18T15:48:55+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "flyleon"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="我的自留地"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/kiss-wink-heart-regular.svg"
+        data-srcset="/images/kiss-wink-heart-regular.svg, /images/kiss-wink-heart-regular.svg 1.5x, /images/kiss-wink-heart-regular.svg 2x"
+        data-sizes="auto"
+        alt="/images/kiss-wink-heart-regular.svg"
+        title="/images/kiss-wink-heart-regular.svg" />FlyLeon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="https://github.com/FlyLeon/flyleon.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/about/" title="关于"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="我的自留地"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/kiss-wink-heart-regular.svg"
+        data-srcset="/images/kiss-wink-heart-regular.svg, /images/kiss-wink-heart-regular.svg 1.5x, /images/kiss-wink-heart-regular.svg 2x"
+        data-sizes="auto"
+        alt="/images/kiss-wink-heart-regular.svg"
+        title="/images/kiss-wink-heart-regular.svg" />FlyLeon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="https://github.com/FlyLeon/flyleon.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/about/" title="关于">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">黑苹果Thinkpad X1 7th carbon安装Big Sur</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>flyleon</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/mac/"><i class="far fa-folder fa-fw"></i>mac</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-18">2020-11-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 515 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#我的配置">我的配置</a></li>
+    <li><a href="#未实现功能">未实现功能</a></li>
+    <li><a href="#apci">apci</a></li>
+    <li><a href="#kext">kext</a></li>
+    <li><a href="#drivers">drivers</a></li>
+    <li><a href="#configplist">config.plist</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p> 我的笔记本电脑是Thinkpad X1 7th carbon，使用EFI启动，同时安装了windiws10，Big Sur和archlinux三套系统。其中黑苹果的安装最为繁琐，OpenCore安装完成使用还是很流畅。显示、声音、屏幕背光、电源管理和声音快捷键是最容易出问题的地方，这里简单记录备忘。</p>
+</blockquote>
+<p>主要参考:</p>
+<ul>
+<li><a href="https://blog.xjn819.com/post/opencore-guide.html" target="_blank" rel="noopener noreffer">使用OpenCore引导黑苹果</a></li>
+<li><a href="https://khronokernel-2.gitbook.io/opencore-vanilla-desktop-guide/" target="_blank" rel="noopener noreffer">OpenCore Vanilla Guide</a></li>
+<li><a href="https://blog.daliansky.net/OpenCore-BootLoader.html" target="_blank" rel="noopener noreffer">精解OpenCore</a></li>
+<li><a href="https://github.com/daliansky/OC-littl" target="_blank" rel="noopener noreffer">OpenCore 0.5+ 部件补丁</a></li>
+<li><a href="https://github.com/tylernguyen/x1c6-hackintosh" target="_blank" rel="noopener noreffer">macOS on Thinkpad X1 Carbon 6th Generation, Model 20KH</a></li>
+</ul>
+<h2 id="我的配置">我的配置</h2>
+<table>
+<thead>
+<tr>
+<th>CPU</th>
+<th>内存</th>
+<th>硬盘</th>
+<th>无线网卡</th>
+<th>声卡</th>
+<th>显卡</th>
+<th>显示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i5-8250U</td>
+<td>8G</td>
+<td>Samsung EVO plus 1T</td>
+<td>BCM3260</td>
+<td>ALC285</td>
+<td>HD 620</td>
+<td>1920*1080</td>
+</tr>
+</tbody>
+</table>
+<h2 id="未实现功能">未实现功能</h2>
+<p>主要有Thunderbolt 3、指纹、SD卡读取等，自己平时也用不上，有些网上有实现方法，就懒得能了。</p>
+<h2 id="apci">apci</h2>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>功能</th>
+<th style="text-align:center">修改plist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSDT-ALS0.aml</td>
+<td>仿冒环境光传感器</td>
+<td></td>
+</tr>
+<tr>
+<td>SSDT-DMAC.aml</td>
+<td>添加缺失的部件</td>
+<td></td>
+</tr>
+<tr>
+<td>SSDT-Keyboard-X1C6.aml</td>
+<td>键盘补丁</td>
+<td></td>
+</tr>
+<tr>
+<td>SSDT-OCBAT0-TP_re80_tx70-80_x1c5th-6th_s12017_p51.aml</td>
+<td>电池主补丁</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td>SSDT-Notify-LPCB</td>
+<td>电池补丁</td>
+<td></td>
+</tr>
+<tr>
+<td>SSDT-OCBATC-TP-LPCB</td>
+<td>电池补丁</td>
+<td></td>
+</tr>
+<tr>
+<td>SSDT-BATS-PRO13</td>
+<td>电池信息辅助补丁</td>
+<td></td>
+</tr>
+<tr>
+<td>SSDT-PLUG-_PR.PR00.aml</td>
+<td>注入 <code>x86</code> 实现 <code>CPU</code> 电源管理</td>
+<td></td>
+</tr>
+<tr>
+<td>SSDT-PMCR.aml</td>
+<td>添加缺失的部件</td>
+<td></td>
+</tr>
+<tr>
+<td>SSDT-PNLF-R.aml</td>
+<td>注入 <code>PNLF</code> 实现屏幕亮度调节</td>
+<td></td>
+</tr>
+<tr>
+<td>SSDT-PWRB.aml</td>
+<td>添加缺失的部件</td>
+<td></td>
+</tr>
+<tr>
+<td>SSDT-OC-XOSI.aml</td>
+<td>操作系统更名补丁</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td>SSDT-SMBU.aml</td>
+<td>SMBUb补丁</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="kext">kext</h2>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AppleALC.kext</td>
+<td>声卡驱动</td>
+</tr>
+<tr>
+<td>CPUFriend.kext</td>
+<td>CPU调频驱动</td>
+</tr>
+<tr>
+<td>CPUFriendDataProvider.kext</td>
+<td>CPU调频数据</td>
+</tr>
+<tr>
+<td>HibernationFixup.kext</td>
+<td>休眠补丁</td>
+</tr>
+<tr>
+<td>IntelMausiEthernet.kext</td>
+<td>有线网卡</td>
+</tr>
+<tr>
+<td>Lilu.kext</td>
+<td>Acidanthera驱动全家桶</td>
+</tr>
+<tr>
+<td>NVMeFix.kext</td>
+<td>NVMe节电补丁</td>
+</tr>
+<tr>
+<td>SMCBatteryManager.kext</td>
+<td>电池传感器</td>
+</tr>
+<tr>
+<td>SMCProcessor.kext</td>
+<td>CPU传感器</td>
+</tr>
+<tr>
+<td>SMCSuperIO.kext</td>
+<td>IO传感器</td>
+</tr>
+<tr>
+<td>VirtualSMC.kext</td>
+<td>传感器驱动依赖</td>
+</tr>
+<tr>
+<td>USBPorts.kext</td>
+<td>USB定制补丁</td>
+</tr>
+<tr>
+<td>VoodooPS2Controller.kext</td>
+<td>键盘鼠标驱动</td>
+</tr>
+<tr>
+<td>WhateverGreen.kext</td>
+<td>显卡驱动｜</td>
+</tr>
+</tbody>
+</table>
+<h2 id="drivers">drivers</h2>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenRuntime.efi</td>
+<td>必需插件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configplist">config.plist</h2>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-11-18</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/bigsur/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/bigsur/" data-title="黑苹果Thinkpad X1 7th carbon安装Big Sur" data-via="xxxx" data-hashtags="bigsur"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/bigsur/" data-hashtag="bigsur"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/bigsur/" data-title="黑苹果Thinkpad X1 7th carbon安装Big Sur" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/bigsur/" data-title="黑苹果Thinkpad X1 7th carbon安装Big Sur"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/bigsur/" data-title="黑苹果Thinkpad X1 7th carbon安装Big Sur"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://localhost:1313/bigsur/" data-title="黑苹果Thinkpad X1 7th carbon安装Big Sur" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/bigsur/" data-title="黑苹果Thinkpad X1 7th carbon安装Big Sur" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/bigsur/" data-title="黑苹果Thinkpad X1 7th carbon安装Big Sur"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/bigsur/">bigsur</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/redshift/" class="prev" rel="prev" title="wayland使用redshift护眼程序"><i class="fas fa-angle-left fa-fw"></i>wayland使用redshift护眼程序</a>
+            <a href="/food-1/" class="next" rel="next" title="美味的菜（一）">美味的菜（一）<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.83.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">flyleon</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

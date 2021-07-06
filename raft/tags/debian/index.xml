@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>debian - 标签 - 我的自留地</title>
+        <link>http://localhost:1313/tags/debian/</link>
+        <description>debian - 标签 - 我的自留地</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 16 Mar 2021 08:42:16 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/debian/" rel="self" type="application/rss+xml" /><item>
+    <title>Debian桌面使用安装配置</title>
+    <link>http://localhost:1313/debian/</link>
+    <pubDate>Tue, 16 Mar 2021 08:42:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/debian/</guid>
+    <description><![CDATA[笔记本一直使用archlinux，但有很长时间未更新，更新后挂了，于是想试试号称最稳定的debian。但网上如何桌面使用的文章很少。以下是我]]></description>
+</item></channel>
+</rss>

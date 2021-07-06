@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>bluetooth&#34; - 标签 - 我的自留地</title>
+        <link>http://localhost:1313/tags/bluetooth/</link>
+        <description>bluetooth&#34; - 标签 - 我的自留地</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 16 Mar 2021 09:43:29 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/bluetooth/" rel="self" type="application/rss+xml" /><item>
+    <title>Big sur、windows10、archlinux三系统配置Bluetooth</title>
+    <link>http://localhost:1313/bluetooth/</link>
+    <pubDate>Tue, 16 Mar 2021 09:43:29 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/bluetooth/</guid>
+    <description><![CDATA[我在TkinkPad X1上同时安装了windows、Archlinux和Big Sur，三个系统可共用蓝牙耳机。首先在三个系统分别连接蓝牙耳机]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,79 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>我的自留地</title>
+        <link>http://localhost:1313/</link>
+        <description>我的自留地</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 06 Jul 2021 08:38:12 &#43;0800</lastBuildDate>
+            <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>声音：《邓晓芒——苏格拉底与孔子的言说方式比较》</title>
+    <link>http://localhost:1313/suge/</link>
+    <pubDate>Tue, 06 Jul 2021 08:38:12 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/suge/</guid>
+    <description><![CDATA[[内容提要] 节选《中西文化比较十一讲》。本文通过对古希腊苏格拉底的对话与孔子的《论语》在言说方式(logos)上的比较，证明苏格拉底的对话把]]></description>
+</item><item>
+    <title>读书：《漫步华尔街》</title>
+    <link>http://localhost:1313/manbuhuxerjie/</link>
+    <pubDate>Wed, 07 Apr 2021 14:16:12 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/manbuhuxerjie/</guid>
+    <description><![CDATA[随机漫步理论 ，磐石与空中阁楼，都需要考虑 股价预测理论： 有效市场，技术分析和基本面分析都无法预测未来走势。 长期 分散的资产配置（指数基金+货币基]]></description>
+</item><item>
+    <title>声音：《杨小凯——后发劣势》</title>
+    <link>http://localhost:1313/houfayoushi/</link>
+    <pubDate>Wed, 07 Apr 2021 13:09:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/houfayoushi/</guid>
+    <description><![CDATA[今天讲的题目是“后发劣势”，这个题目也许不太适合很多人的口味，因为现在国内都在讲“后发优势”。我讲的后发劣势在西方研究的人也不多，有一位过世]]></description>
+</item><item>
+    <title>读书:《投资中最简单的事》</title>
+    <link>http://localhost:1313/simple-invest/</link>
+    <pubDate>Wed, 07 Apr 2021 13:01:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/simple-invest/</guid>
+    <description><![CDATA[1.投资理念 股票投资当作实业投资 护城河 门槛 1.1这是不是一门好生意 案例：手游行业 竞争 盈利持续性 &lsquo;&lsquo;长期牛股 行业集中度]]></description>
+</item><item>
+    <title>声音:《安·兰德专栏集粹——什么是客观主义》</title>
+    <link>http://localhost:1313/objectivism/</link>
+    <pubDate>Wed, 07 Apr 2021 12:50:44 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/objectivism/</guid>
+    <description><![CDATA[1962年6月17日 在《地球的震栗》出版前，兰登书屋为该书举行了一次推介会，会上有一个书商问我是否可以单脚站立总结一下我的主要哲学思想。我满]]></description>
+</item><item>
+    <title>声音:《安·兰德专栏集粹——关于美国主义的问答》</title>
+    <link>http://localhost:1313/about-american/</link>
+    <pubDate>Wed, 07 Apr 2021 12:42:18 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/about-american/</guid>
+    <description><![CDATA[本文1946年原载于加利福尼亚州贝弗利希尔斯市一份以保护美国理想为宗旨的电影协会刊物《警戒》。文章的目的在于定义和阐明政治领域的基本原理，所]]></description>
+</item><item>
+    <title>Big sur、windows10、archlinux三系统配置Bluetooth</title>
+    <link>http://localhost:1313/bluetooth/</link>
+    <pubDate>Tue, 16 Mar 2021 09:43:29 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/bluetooth/</guid>
+    <description><![CDATA[我在TkinkPad X1上同时安装了windows、Archlinux和Big Sur，三个系统可共用蓝牙耳机。首先在三个系统分别连接蓝牙耳机]]></description>
+</item><item>
+    <title>Debian桌面使用安装配置</title>
+    <link>http://localhost:1313/debian/</link>
+    <pubDate>Tue, 16 Mar 2021 08:42:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/debian/</guid>
+    <description><![CDATA[笔记本一直使用archlinux，但有很长时间未更新，更新后挂了，于是想试试号称最稳定的debian。但网上如何桌面使用的文章很少。以下是我]]></description>
+</item><item>
+    <title>Thinkpad T400上安装配置Freebsd 12</title>
+    <link>http://localhost:1313/freebsd/</link>
+    <pubDate>Wed, 24 Feb 2021 11:47:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/freebsd/</guid>
+    <description><![CDATA[最近把一台T400的操作系统从Archlinux换成freeBSD，发现freeBSD更稳定，资源占用也更低。可能是使用人少的缘故，网上中文]]></description>
+</item><item>
+    <title>Archlinux设置窗口管理器(wm)</title>
+    <link>http://localhost:1313/wm/</link>
+    <pubDate>Sat, 06 Feb 2021 21:29:02 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/wm/</guid>
+    <description><![CDATA[最近试试在archlinux下使用titling窗口管理器，包括大名鼎鼎的i3、bspwm、dwm、qtile和xmonad，发现打开了新世]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>投资 - 分类 - 我的自留地</title>
+        <link>http://localhost:1313/categories/%E6%8A%95%E8%B5%84/</link>
+        <description>投资 - 分类 - 我的自留地</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 07 Apr 2021 14:16:12 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%8A%95%E8%B5%84/" rel="self" type="application/rss+xml" /><item>
+    <title>读书：《漫步华尔街》</title>
+    <link>http://localhost:1313/manbuhuxerjie/</link>
+    <pubDate>Wed, 07 Apr 2021 14:16:12 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/manbuhuxerjie/</guid>
+    <description><![CDATA[随机漫步理论 ，磐石与空中阁楼，都需要考虑 股价预测理论： 有效市场，技术分析和基本面分析都无法预测未来走势。 长期 分散的资产配置（指数基金+货币基]]></description>
+</item><item>
+    <title>读书:《投资中最简单的事》</title>
+    <link>http://localhost:1313/simple-invest/</link>
+    <pubDate>Wed, 07 Apr 2021 13:01:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/simple-invest/</guid>
+    <description><![CDATA[1.投资理念 股票投资当作实业投资 护城河 门槛 1.1这是不是一门好生意 案例：手游行业 竞争 盈利持续性 &lsquo;&lsquo;长期牛股 行业集中度]]></description>
+</item></channel>
+</rss>

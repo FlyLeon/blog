@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>mac - 分类 - 我的自留地</title>
+        <link>http://localhost:1313/categories/mac/</link>
+        <description>mac - 分类 - 我的自留地</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 18 Nov 2020 15:48:55 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/mac/" rel="self" type="application/rss+xml" /><item>
+    <title>黑苹果Thinkpad X1 7th carbon安装Big Sur</title>
+    <link>http://localhost:1313/bigsur/</link>
+    <pubDate>Wed, 18 Nov 2020 15:48:55 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/bigsur/</guid>
+    <description><![CDATA[我的笔记本电脑是Thinkpad X1 7th carbon，使用EFI启动，同时安装了windiws10，Big Sur和archlinux三套系统。其]]></description>
+</item></channel>
+</rss>
