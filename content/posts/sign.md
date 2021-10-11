@@ -15,7 +15,7 @@ tags : ["sign"]
 - 改回后缀
 
 ## 生成自签名
-‘keytool -genkey -alias my_alias -keyalg RSA -validity 20000 -keystore yurname.keystore‘
+'keytool -genkey -alias my_alias -keyalg RSA -validity 20000 -keystore yurname.keystore'
 
 ## 下载'Uber Apk Signer'      
 'git clone --depth=1 https://github.com/patrickfav/uber-apk-signer.git'
