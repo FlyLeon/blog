@@ -5,7 +5,7 @@ categories : [sign"]
 tags : ["sign"]
 draft: true
 ---
-> 下的是如何为我们的删除现有Apk签名并重新签名！我们后续的教程使用的是'Uber Apk Signer，所以本节讲解的是使用'Uber Apk Signer'对项目进行签名！
+> 下面将的是如何为我们的删除现有Apk签名并重新签名！我们后续的教程使用的是'Uber Apk Signer，所以本闻讲解的是使用'Uber Apk Signer'对项目进行签名！
 
 ## 去除签名
 - 将后缀apk改为zip
@@ -23,4 +23,3 @@ draft: true
 
 ## 自签名
 'java -jar uber-apk-signer.jar -a /path/to/apks --ks /path/release.jks' --ksAlias my_alias'
-
