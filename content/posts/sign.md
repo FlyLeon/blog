@@ -23,3 +23,4 @@ draft: true
 
 ## 自签名
 'java -jar uber-apk-signer.jar -a /path/to/apks --ks /path/release.jks' --ksAlias my_alias'
+
