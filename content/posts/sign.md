@@ -1,9 +1,8 @@
 ---
 title: "安卓程序签名"
 date: 2021-10-11T14:56:35+08:00
-categories : [sign"]
+categories : ["安卓"]
 tags : ["sign"]
-draft: true
 ---
 > 下面讲的是如何为我们的删除现有Apk签名并重新签名！我们后续的教程使用的是'Uber Apk Signer，所以本闻讲解的是使用'Uber Apk Signer'对项目进行签名！
 
