@@ -4,7 +4,7 @@ date: 2021-10-11T14:56:35+08:00
 categories : ["安卓"]
 tags : ["sign"]
 ---
-> 下面讲的是如何为我们的删除现有Apk签名并重新签名！我们后续的教程使用的是'Uber Apk Signer，所以本闻讲解的是使用'Uber Apk Signer'对项目进行签名！
+> 下面讲的是如何为我们的删除现有Apk签名并重新签名，我们后续的教程使用的是'Uber Apk Signer'。
 
 ## 去除签名
 - 将后缀apk改为zip
